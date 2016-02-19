@@ -15,6 +15,12 @@ Optionals:
 [] - Location of grocery store
 [] - Store ratings, link to BOGO deals
 
+Wireframes
+http://i.imgur.com/cGhjL9j.jpg
+http://i.imgur.com/zqEnfo2.jpg
+http://i.imgur.com/SEAejZV.jpg
+
+
 User - userid, email, password, rides, requests, rating
 Rides - rideid, requests, spots left, lock status, time, price, destination
 Requests - requestid, messages, requestrname, requestaddress, riderid, driverid
