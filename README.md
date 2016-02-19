@@ -14,3 +14,8 @@ Optionals:
 [] - User and driver details
 [] - Location of grocery store
 [] - Store ratings, link to BOGO deals
+
+User - userid, email, password, rides, requests, rating
+Rides - rideid, requests, spots left, lock status, time, price, destination
+Requests - requestid, messages, requestrname, requestaddress, riderid, driverid
+Message - requestid, rideid
