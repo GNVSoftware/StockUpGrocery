@@ -5,5 +5,6 @@ use_frameworks!
 
 target 'StockUp' do
 pod ‘Parse’
+pod ‘GoogleMaps’
 end
 
