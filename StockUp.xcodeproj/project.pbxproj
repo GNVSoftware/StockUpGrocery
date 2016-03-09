@@ -12,6 +12,7 @@
 		0AE91D4D1C6428EE00D2E2C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AE91D4B1C6428EE00D2E2C8 /* Main.storyboard */; };
 		0AE91D4F1C6428EE00D2E2C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AE91D4E1C6428EE00D2E2C8 /* Assets.xcassets */; };
 		0AE91D521C6428EE00D2E2C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AE91D501C6428EE00D2E2C8 /* LaunchScreen.storyboard */; };
+		8A65B23828E086960CBDCD33 /* Pods_StockUp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88A062A8EFFA275141B01940 /* Pods_StockUp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,9 @@
 		0AE91D4E1C6428EE00D2E2C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0AE91D511C6428EE00D2E2C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0AE91D531C6428EE00D2E2C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2FBCF079908814713BBAE418 /* Pods-StockUp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockUp.release.xcconfig"; path = "Pods/Target Support Files/Pods-StockUp/Pods-StockUp.release.xcconfig"; sourceTree = "<group>"; };
+		75649DB13D7A8FFA32449589 /* Pods-StockUp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockUp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StockUp/Pods-StockUp.debug.xcconfig"; sourceTree = "<group>"; };
+		88A062A8EFFA275141B01940 /* Pods_StockUp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StockUp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A65B23828E086960CBDCD33 /* Pods_StockUp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,8 @@
 			children = (
 				0AE91D461C6428EE00D2E2C8 /* StockUp */,
 				0AE91D451C6428EE00D2E2C8 /* Products */,
+				C97BB406523EF9720FEBBEC2 /* Pods */,
+				2C48AAB4CE9F5ED4777069A0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +71,23 @@
 			path = StockUp;
 			sourceTree = "<group>";
 		};
+		2C48AAB4CE9F5ED4777069A0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				88A062A8EFFA275141B01940 /* Pods_StockUp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C97BB406523EF9720FEBBEC2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				75649DB13D7A8FFA32449589 /* Pods-StockUp.debug.xcconfig */,
+				2FBCF079908814713BBAE418 /* Pods-StockUp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0AE91D561C6428EE00D2E2C8 /* Build configuration list for PBXNativeTarget "StockUp" */;
 			buildPhases = (
+				D5661AA4FB8B2A26336ADC76 /* Check Pods Manifest.lock */,
 				0AE91D401C6428EE00D2E2C8 /* Sources */,
 				0AE91D411C6428EE00D2E2C8 /* Frameworks */,
 				0AE91D421C6428EE00D2E2C8 /* Resources */,
+				CF9F88D18E89EFE972547B0D /* Embed Pods Frameworks */,
+				669520DDE9F88E681643F825 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -129,6 +156,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		669520DDE9F88E681643F825 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StockUp/Pods-StockUp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CF9F88D18E89EFE972547B0D /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StockUp/Pods-StockUp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D5661AA4FB8B2A26336ADC76 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0AE91D401C6428EE00D2E2C8 /* Sources */ = {
@@ -245,6 +320,7 @@
 		};
 		0AE91D571C6428EE00D2E2C8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75649DB13D7A8FFA32449589 /* Pods-StockUp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = StockUp/Info.plist;
@@ -256,6 +332,7 @@
 		};
 		0AE91D581C6428EE00D2E2C8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2FBCF079908814713BBAE418 /* Pods-StockUp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = StockUp/Info.plist;
@@ -284,6 +361,7 @@
 				0AE91D581C6428EE00D2E2C8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
