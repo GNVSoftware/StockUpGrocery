@@ -7,20 +7,18 @@ Team: Franky Liang, Zhan Liang, Pranav Achanta
 
 The following **required** functionality is complete:
 
-- [ ] Users should be able to see people offering rides to the user's present location
-- [ ] Settings page with filters.
-- [ ] Ability to chat with each other
-- [ ] Allow people offering rides to accept or decline a request
-- [ ] User authentication - for now @ufl.edu
-- [ ] User ratings - Driver and Rider
+- [ ] Passenger should be able to view all rides within 5 miles of his start point and  select one ride.
+- [ ] Driver should be able to post a ride giving details store address, price and no of seats available.
+- [ ] Nav Bar button goes to history of accepted rides
+- [ ] User can see all the requests on a map with the passenger location as pins on the map.
 
 The following **optional** features are implemented:
 
-- [ ] - Map view
-- [ ] - Real time driver location
-- [ ] - User and driver details
-- [ ] - Location of grocery store
-- [ ] - Store ratings, link to BOGO deals
+- [ ] Map view
+- [ ] Real time driver location
+- [ ] Store ratings, link to BOGO deals
+- [ ] User ratings - Driver and Rider
+- [ ] User authentication - for now @ufl.edu
 
 
 ## Wireframes
@@ -31,11 +29,9 @@ http://i.imgur.com/SEAejZV.jpg
 
 ## Suggested Schema
 
-User - userid, email, password, rides, requests, rating
-Rides - rideid, requests, spots left, lock status, time, price, destination
-Requests - requestid, messages, requestrname, requestaddress, riderid, driverid
-Message - requestid, rideid
-
+User     - userid, email, password, rides, requests, rating, phone number
+Rides    - Rideid, DriverId, Spots Left, Time, Price, Destination
+Requests - Requestid, Ride Id, PassengerId, Passenger address
 
 ## Video Walkthrough 
 
