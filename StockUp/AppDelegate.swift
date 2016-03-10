@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Parse
+import GoogleMaps
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +19,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        Parse.initializeWithConfiguration(
+            ParseClientConfiguration(block: { (configuration:ParseMutableClientConfiguration) -> Void in
+                configuration.applicationId = "StockUp"
+                configuration.clientKey = "codepathstockup2016.."
+                configuration.server = "https://stockupgrocery.herokuapp.com/parse"
+            })
+        )
+        GMSServices.provideAPIKey("AIzaSyCBulFdIQUPTkCcViKJp7xY5aTMPsiMyew")
         return true
     }
 
