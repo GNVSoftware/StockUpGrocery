@@ -14,7 +14,7 @@ import GoogleMaps
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    
+    var storyboard = UIStoryboard(name: "Main", bundle: nil)
     // Testing Souce Control ---> Comment by Pranav
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -27,6 +27,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             })
         )
         GMSServices.provideAPIKey("AIzaSyCBulFdIQUPTkCcViKJp7xY5aTMPsiMyew")
+        // setup parse keys
+        
+        
+        // check if user is logged in.
+        if PFUser.currentUser() != nil {
+            let vc = storyboard.instantiateViewControllerWithIdentifier("tabBarController") as UIViewController!
+            window?.rootViewController = vc
+            // set the tabbar controller as a root vc instead of the nav bar. So i set myNav on the tabbar controller
+            // when drag the connection to Home, you've already drag it to the nav .
+            // set the Home as the first tab bar, so when you set tab bar controller as the root vc, the Home vc will be shown. m
+            // if there is a logged in user then load the home view controller
+        }
+
         return true
     }
 
