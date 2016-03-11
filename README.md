@@ -34,6 +34,7 @@ Rides    - Rideid, DriverId, Spots Left, Time, Price, Destination
 Requests - Requestid, Ride Id, PassengerId, Passenger address
 
 ## Video Walkthrough 
+http://i.imgur.com/sbJrxS3.gif
 
 Here's a walkthrough of implemented user stories:
 
