@@ -34,6 +34,11 @@ class Post: NSObject {
         newRide["destinationName"] = destination.name
         newRide["driver"] = PFUser.currentUser()
         
+        
+        newRide["fromLocation"] = [currentLatitude, currentLongitude]
+        
+        newRide["destinationLocation"] = [destination.coordinate.latitude, destination.coordinate.longitude]
+        
         newRide.saveInBackgroundWithBlock(completion)
     }
 
