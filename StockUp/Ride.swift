@@ -25,6 +25,10 @@ class Ride: NSObject {
         newRide["destinationLatitude"] = destination.coordinate.latitude
         newRide["destinationLongitude"] = destination.coordinate.longitude
         
+        newRide["fromLocation"] = [currentLatitude, currentLongitude]
+        
+        newRide["destinationLocation"] = [destination.coordinate.latitude, destination.coordinate.longitude]
+        
         
         newRide["currentLatitude"] = currentLatitude
         newRide["currentLongitude"] = currentLongitude
