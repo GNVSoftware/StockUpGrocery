@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -19,20 +19,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Guv-zW-WVJ">
-                                <rect key="frame" x="250" y="518" width="55" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Sign Up"/>
-                                <connections>
-                                    <action selector="signupButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M6Y-gk-XMi"/>
-                                    <segue destination="g7A-k7-hTJ" kind="push" identifier="signupSegue" id="WGQ-TO-qpG"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Lks-bT-Hmw">
                                 <rect key="frame" x="71" y="522" width="179" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" id="MaR-0A-tBJ">
@@ -52,6 +43,14 @@
                                     <action selector="signinButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rVt-Qm-KwH"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Guv-zW-WVJ">
+                                <rect key="frame" x="250" y="518" width="55" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Sign Up"/>
+                                <connections>
+                                    <action selector="signupButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M6Y-gk-XMi"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -59,11 +58,12 @@
                         <outlet property="passwordTextField" destination="MaR-0A-tBJ" id="vVM-r8-9je"/>
                         <outlet property="usernameTextField" destination="CCr-Qu-d3Z" id="ySt-0Z-BL2"/>
                         <segue destination="v29-5f-9cj" kind="modal" identifier="loginSegue" id="MSD-Sa-dMc"/>
+                        <segue destination="g7A-k7-hTJ" kind="modal" identifier="signupSegue" id="SbV-1Q-Urf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-558" y="-162"/>
+            <point key="canvasLocation" x="-527" y="-303"/>
         </scene>
         <!--Account-->
         <scene sceneID="tgw-AK-yak">
@@ -104,12 +104,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="179-ql-MsN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="12" y="182"/>
+            <point key="canvasLocation" x="333" y="492"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ykM-Fr-uFH">
             <objects>
-                <tabBarController id="v29-5f-9cj" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabBarController" id="v29-5f-9cj" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="jiR-H6-QVR">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -123,7 +123,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lMs-UU-Ofx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-586" y="617"/>
+            <point key="canvasLocation" x="-590" y="620"/>
         </scene>
         <!--Sign Up-->
         <scene sceneID="Akt-Rf-258">
@@ -178,11 +178,12 @@
                         <outlet property="phoneTextField" destination="sdt-Gl-hVG" id="8DQ-60-ktl"/>
                         <outlet property="usernameTextField" destination="Meg-tn-Box" id="6G8-XO-8fX"/>
                         <segue destination="v29-5f-9cj" kind="modal" identifier="loginSegue" id="hqb-3R-fuM"/>
+                        <segue destination="g7A-k7-hTJ" kind="modal" id="TE3-3W-gzC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uUz-tY-YwH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="288" y="-509"/>
+            <point key="canvasLocation" x="689" y="-616"/>
         </scene>
         <!--Post Ride-->
         <scene sceneID="TRZ-ZO-ZqV">
@@ -193,22 +194,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Gbr-hm-qWO">
-                                <rect key="frame" x="137" y="158" width="46" height="30"/>
+                                <rect key="frame" x="99" y="81" width="123" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Choose a location"/>
                                 <connections>
                                     <action selector="pickPlace:" destination="QWf-Np-POd" eventType="touchUpInside" id="RH9-KX-dLw"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9UE-SL-yYa">
-                                <rect key="frame" x="139" y="209" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PUBLIX SUPERMARKET GROCERY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9UE-SL-yYa">
+                                <rect key="frame" x="27" y="209" width="266" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qpF-rP-oWh">
-                                <rect key="frame" x="139" y="238" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123 Example Address Drive" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qpF-rP-oWh">
+                                <rect key="frame" x="56" y="260" width="209" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -226,10 +227,24 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Jbb-1G-Hzg">
-                                <rect key="frame" x="137" y="427" width="46" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="q0a-Hg-V8z">
+                                <rect key="frame" x="138" y="187" width="45" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Y4A-FF-kM1">
+                                <rect key="frame" x="129" y="238" width="63" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Jbb-1G-Hzg">
+                                <rect key="frame" x="122" y="430" width="77" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Post a Ride"/>
                                 <connections>
                                     <action selector="clickPost:" destination="QWf-Np-POd" eventType="touchUpInside" id="L7X-lv-QK6"/>
                                 </connections>
@@ -241,11 +256,13 @@
                     <connections>
                         <outlet property="addressLabel" destination="qpF-rP-oWh" id="W8l-1n-7LD"/>
                         <outlet property="nameLabel" destination="9UE-SL-yYa" id="Pek-BW-aRt"/>
+                        <outlet property="priceTextField" destination="F8y-4h-gaU" id="Jye-e6-PsG"/>
+                        <outlet property="seatsTextField" destination="iAK-DV-vNg" id="DRD-Q4-XlK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U3V-MV-JXt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="399" y="431"/>
+            <point key="canvasLocation" x="-244" y="1340"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="BOd-md-BOs">
@@ -264,10 +281,11 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ORf-Ee-2hs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-97" y="-509"/>
+            <point key="canvasLocation" x="16" y="-565"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="MSD-Sa-dMc"/>
+        <segue reference="TE3-3W-gzC"/>
+        <segue reference="hqb-3R-fuM"/>
     </inferredMetricsTieBreakers>
 </document>

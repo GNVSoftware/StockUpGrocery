@@ -10,22 +10,31 @@ import UIKit
 import Parse
 import GoogleMaps
 
-class postRidesViewController: UIViewController {
+class postRidesViewController: UIViewController, CLLocationManagerDelegate {
+    
+    var locationManager: CLLocationManager!
     /*
     var resultsViewController: GMSAutocompleteResultsViewController?
     var searchController: UISearchController?
     var resultView: UITextView?
     */
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var addressLabel: UILabel!
     
+    @IBOutlet weak var addressLabel: UILabel!
+    var placesClient: GMSPlacesClient!
     var price = 1
     var seatsAvail = 1
     var rideModel = Ride()
-    
+    var postRide = Post()
+    @IBOutlet weak var priceTextField: UITextField!
+    @IBOutlet weak var seatsTextField: UITextField!
     var destination: GMSPlace?
     var placePicker: GMSPlacePicker?
-
+    
+    var currentPoint: PFGeoPoint?
+    
+    var currentLat = 0.0
+    var currentLong = 0.0
     override func viewDidLoad() {
         super.viewDidLoad()
         /*
@@ -46,15 +55,55 @@ class postRidesViewController: UIViewController {
         // this view controller, not one further up the chain.
         self.definesPresentationContext = true
         */
+        
         // Do any additional setup after loading the view.
+        //let destPoint = PFGeoPoint(latitude:destination.coordinate.latitude, longitude:destination.coordinate.longitude )
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        locationManager.distanceFilter = 200
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.requestAlwaysAuthorization()
+        
+        placesClient = GMSPlacesClient()
+        
+        placesClient.currentPlaceWithCallback({ (placeLikelihoods, error) -> Void in
+            guard error == nil else {
+                print("Current Place error: \(error!.localizedDescription)")
+                return
+            }
+            
+            if let placeLikelihoods = placeLikelihoods {
+                print("place")
+                for likelihood in placeLikelihoods.likelihoods {
+                    let currentplace = likelihood.place
+                    
+                    self.currentPoint = PFGeoPoint(latitude: currentplace.coordinate.latitude, longitude: currentplace.coordinate.longitude)
+                    self.currentLat = currentplace.coordinate.latitude
+                    self.currentLong = currentplace.coordinate.longitude
+                    
+                    print("Current Place name \(currentplace.name) at likelihood \(likelihood.likelihood)")
+                    print("Current Place address \(currentplace.formattedAddress)")
+                    print("Current Place attributions \(currentplace.attributions)")
+                    print("Current PlaceID \(currentplace.placeID)")
+                }
+            } else {
+                print("nil")
+            }
+            
+        })
+        
+    
     }
+    
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     @IBAction func pickPlace(sender: UIButton) {
-        let center = CLLocationCoordinate2DMake(37.788204, -122.411937)
+        let center = CLLocationCoordinate2DMake(currentLat, currentLong)
         let northEast = CLLocationCoordinate2DMake(center.latitude + 0.001, center.longitude + 0.001)
         let southWest = CLLocationCoordinate2DMake(center.latitude - 0.001, center.longitude - 0.001)
         let viewport = GMSCoordinateBounds(coordinate: northEast, coordinate: southWest)
@@ -82,7 +131,11 @@ class postRidesViewController: UIViewController {
         //EZLoadingActivity.show("Loading...", disableUI: false)
         if (destination!.name != "" && seatsAvail != 0) {
             
-            rideModel.postRide(destination!, price: price, seatsAvailable: seatsAvail, withCompletion: { (success: Bool, error: NSError?) -> Void in
+            price = Int(priceTextField.text!)!
+            
+            seatsAvail = Int(priceTextField.text!)!
+            
+            postRide.postRide(destination!, currentLatitude: currentLat, currentLongitude: currentLong, price: price, seatsAvailable: seatsAvail, withCompletion: { (success: Bool, error: NSError?) -> Void in
                 if let error = error {
                     print(error.localizedDescription)
                     

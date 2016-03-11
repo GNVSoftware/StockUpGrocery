@@ -1,5 +1,5 @@
 //
-//  Ride.swift
+//  Post.swift
 //  StockUp
 //
 //  Created by Franky Liang on 3/10/16.
@@ -10,15 +10,16 @@ import UIKit
 import Parse
 import GoogleMaps
 
-class Ride: NSObject {
+class Post: NSObject {
+    
     
     func postRide(destination: GMSPlace, currentLatitude: Double, currentLongitude: Double, price: Int, seatsAvailable: Int, withCompletion completion: PFBooleanResultBlock?) {
-        let newRide = PFObject(className:"Ride")
+        let newRide = PFObject(className:"Post")
         
         newRide["price"] = price
         newRide["seatsAvailable"] = seatsAvailable
         newRide["departuredTime"] = 5 //temporary
-    
+        
         newRide["destinationAddress"] = destination.formattedAddress!.componentsSeparatedByString(", ").joinWithSeparator("\n")
         
         let destPoint = PFGeoPoint(latitude:destination.coordinate.latitude, longitude:destination.coordinate.longitude )
@@ -35,5 +36,5 @@ class Ride: NSObject {
         
         newRide.saveInBackgroundWithBlock(completion)
     }
-    
+
 }
