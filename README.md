@@ -8,7 +8,7 @@ Team: Franky Liang, Zhan Liang, Pranav Achanta
 The following **required** functionality is complete:
 
 - [ ] Passenger should be able to view all rides within 5 miles of his start point and  select one ride.
-- [ ] Driver should be able to post a ride giving details store address, price and no of seats available.
+- [x ] Driver should be able to post a ride giving details store address, price and no of seats available.
 - [ ] Nav Bar button goes to history of accepted rides
 - [ ] User can see all the requests on a map with the passenger location as pins on the map.
 
