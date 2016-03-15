@@ -101,7 +101,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="Jfe-AJ-On7" kind="relationship" relationship="viewControllers" id="mJ1-8j-bfP"/>
-                        <segue destination="L6z-dJ-Kwg" kind="relationship" relationship="viewControllers" id="1vS-jw-Fqr"/>
+                        <segue destination="QWf-Np-POd" kind="relationship" relationship="viewControllers" id="1vS-jw-Fqr"/>
                         <segue destination="ULw-MZ-tn5" kind="relationship" relationship="viewControllers" id="fRk-PD-eaz"/>
                     </connections>
                 </tabBarController>
@@ -168,6 +168,85 @@
             </objects>
             <point key="canvasLocation" x="149" y="-303"/>
         </scene>
+        <!--Post Ride-->
+        <scene sceneID="TRZ-ZO-ZqV">
+            <objects>
+                <viewController id="QWf-Np-POd" customClass="postRidesViewController" customModule="StockUp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GGb-dw-ImW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Gbr-hm-qWO">
+                                <rect key="frame" x="99" y="81" width="123" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Choose a location"/>
+                                <connections>
+                                    <action selector="pickPlace:" destination="QWf-Np-POd" eventType="touchUpInside" id="RH9-KX-dLw"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PUBLIX SUPERMARKET GROCERY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9UE-SL-yYa">
+                                <rect key="frame" x="27" y="209" width="266" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123 Example Address Drive" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qpF-rP-oWh">
+                                <rect key="frame" x="56" y="260" width="209" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="F8y-4h-gaU">
+                                <rect key="frame" x="112" y="294" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="iAK-DV-vNg">
+                                <rect key="frame" x="112" y="352" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="q0a-Hg-V8z">
+                                <rect key="frame" x="138" y="187" width="45" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Y4A-FF-kM1">
+                                <rect key="frame" x="129" y="238" width="63" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Jbb-1G-Hzg">
+                                <rect key="frame" x="122" y="430" width="77" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Post a Ride"/>
+                                <connections>
+                                    <action selector="clickPost:" destination="QWf-Np-POd" eventType="touchUpInside" id="L7X-lv-QK6"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Post Ride" id="gaI-05-M7B"/>
+                    <connections>
+                        <outlet property="addressLabel" destination="qpF-rP-oWh" id="W8l-1n-7LD"/>
+                        <outlet property="nameLabel" destination="9UE-SL-yYa" id="Pek-BW-aRt"/>
+                        <outlet property="priceTextField" destination="F8y-4h-gaU" id="Jye-e6-PsG"/>
+                        <outlet property="seatsTextField" destination="iAK-DV-vNg" id="DRD-Q4-XlK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U3V-MV-JXt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-214" y="1256"/>
+        </scene>
         <!--searchRides-->
         <scene sceneID="NQY-k9-NHj">
             <objects>
@@ -177,16 +256,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mBM-SU-06B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-709.5" y="952"/>
-        </scene>
-        <!--postRide-->
-        <scene sceneID="k9K-3R-fbf">
-            <objects>
-                <viewControllerPlaceholder storyboardName="postRide" id="L6z-dJ-Kwg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="hjo-Nt-vTj"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ufj-XM-82W" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-214" y="952"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
