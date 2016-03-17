@@ -3,14 +3,26 @@ PODS:
   - GoogleMaps (1.12.3)
   - Parse (1.12.0):
     - Bolts/Tasks (~> 1.5)
+  - SwiftyJSON (2.3.2)
 
 DEPENDENCIES:
   - GoogleMaps
   - Parse
+  - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
+
+EXTERNAL SOURCES:
+  SwiftyJSON:
+    :git: https://github.com/SwiftyJSON/SwiftyJSON.git
+
+CHECKOUT OPTIONS:
+  SwiftyJSON:
+    :commit: 2a5b70f06001316d4fb54501edc70b4084705da0
+    :git: https://github.com/SwiftyJSON/SwiftyJSON.git
 
 SPEC CHECKSUMS:
   Bolts: f52a250053bb517ca874523c3913776359ab3def
   GoogleMaps: a4ac67918d0b5ba5f6b9893ac80487e357779e6c
   Parse: de2c52a9a1421b91ae7594ab8ce191afd184f19b
+  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
 COCOAPODS: 0.39.0

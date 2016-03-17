@@ -9,35 +9,25 @@
 import UIKit
 import Parse
 import GoogleMaps
+import SwiftyJSON
 
 class Ride: NSObject {
     
-    func postRide(destination: GMSPlace, currentLatitude: Double, currentLongitude: Double, price: Int, seatsAvailable: Int, withCompletion completion: PFBooleanResultBlock?) {
-        let newRide = PFObject(className:"Ride")
-        
-        newRide["price"] = price
-        newRide["seatsAvailable"] = seatsAvailable
-        newRide["departuredTime"] = 5 //temporary
+    //Properties
+    var destination : String
+    var destAddress : String
+    var driver : String
+    var seats : Int16
+    var price : Int16
+    var time : Int16
     
-        newRide["destinationAddress"] = destination.formattedAddress!.componentsSeparatedByString(", ").joinWithSeparator("\n")
-        
-        let destPoint = PFGeoPoint(latitude:destination.coordinate.latitude, longitude:destination.coordinate.longitude )
-        newRide["destinationLatitude"] = destination.coordinate.latitude
-        newRide["destinationLongitude"] = destination.coordinate.longitude
-        
-        newRide["fromLocation"] = [currentLatitude, currentLongitude]
-        
-        newRide["destinationLocation"] = [destination.coordinate.latitude, destination.coordinate.longitude]
-        
-        
-        newRide["currentLatitude"] = currentLatitude
-        newRide["currentLongitude"] = currentLongitude
-        
-        
-        newRide["destinationName"] = destination.name
-        newRide["driver"] = PFUser.currentUser()
-        
-        newRide.saveInBackgroundWithBlock(completion)
+    init(ride : JSON){
+        // code goes here
+        self.destination = ride["destinationName"].stringValue
+        self.destAddress = ride["destinationAddress"].stringValue
+        self.driver = ride["driverID"]["name"].stringValue
+        self.seats = ride["seatsAvailable"].int16Value
+        self.price = ride["price"].int16Value
+        self.time = ride["departureTime"].int16Value
     }
-    
 }

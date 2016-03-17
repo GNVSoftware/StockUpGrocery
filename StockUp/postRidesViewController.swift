@@ -24,7 +24,7 @@ class postRidesViewController: UIViewController, CLLocationManagerDelegate {
     var placesClient: GMSPlacesClient!
     var price = 1
     var seatsAvail = 1
-    var rideModel = Ride()
+//    var rideModel = Ride()
     var postRide = Post()
     @IBOutlet weak var priceTextField: UITextField!
     @IBOutlet weak var seatsTextField: UITextField!
