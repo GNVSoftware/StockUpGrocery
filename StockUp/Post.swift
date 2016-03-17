@@ -13,7 +13,7 @@ import GoogleMaps
 class Post: NSObject {
     
     
-    func postRide(destination: GMSPlace, currentLatitude: Double, currentLongitude: Double, price: Int, seatsAvailable: Int, withCompletion completion: PFBooleanResultBlock?) {
+    func postRide(destination: GMSPlace, currentLocation: GMSPlace, currentLatitude: Double, currentLongitude: Double, price: Int, seatsAvailable: Int, withCompletion completion: PFBooleanResultBlock?) {
         let newRide = PFObject(className:"Post")
         
         newRide["price"] = price
@@ -32,12 +32,15 @@ class Post: NSObject {
         
         
         newRide["destinationName"] = destination.name
-        newRide["driver"] = PFUser.currentUser()
+        newRide["driverID"] = PFUser.currentUser()?.objectId
+        
+        newRide["destinationPlaceID"] = destination.placeID
+        newRide["currentLocationID"] = currentLocation.placeID
         
         
-        newRide["fromLocation"] = [currentLatitude, currentLongitude]
+        newRide["currentLocation"] = [currentLongitude, currentLatitude]
         
-        newRide["destinationLocation"] = [destination.coordinate.latitude, destination.coordinate.longitude]
+        newRide["destinationLocation"] = [destination.coordinate.longitude, destination.coordinate.latitude]
         
         newRide.saveInBackgroundWithBlock(completion)
     }

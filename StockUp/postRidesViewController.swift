@@ -30,7 +30,7 @@ class postRidesViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var seatsTextField: UITextField!
     var destination: GMSPlace?
     var placePicker: GMSPlacePicker?
-    
+    var currentLocation : GMSPlace?
     var currentPoint: PFGeoPoint?
     
     var currentLat = 0.0
@@ -77,6 +77,7 @@ class postRidesViewController: UIViewController, CLLocationManagerDelegate {
                 print("place")
                 for likelihood in placeLikelihoods.likelihoods {
                     let currentplace = likelihood.place
+                    self.currentLocation = currentplace
                     
                     self.currentPoint = PFGeoPoint(latitude: currentplace.coordinate.latitude, longitude: currentplace.coordinate.longitude)
                     self.currentLat = currentplace.coordinate.latitude
@@ -135,7 +136,7 @@ class postRidesViewController: UIViewController, CLLocationManagerDelegate {
             
             seatsAvail = Int(priceTextField.text!)!
             
-            postRide.postRide(destination!, currentLatitude: currentLat, currentLongitude: currentLong, price: price, seatsAvailable: seatsAvail, withCompletion: { (success: Bool, error: NSError?) -> Void in
+            postRide.postRide(destination!, currentLocation: currentLocation!, currentLatitude: currentLat, currentLongitude: currentLong, price: price, seatsAvailable: seatsAvail, withCompletion: { (success: Bool, error: NSError?) -> Void in
                 if let error = error {
                     print(error.localizedDescription)
                     

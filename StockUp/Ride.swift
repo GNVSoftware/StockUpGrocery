@@ -28,6 +28,6 @@ class Ride: NSObject {
         self.driver = ride["driverID"]["name"].stringValue
         self.seats = ride["seatsAvailable"].int16Value
         self.price = ride["price"].int16Value
-        self.time = ride["departureTime"].int16Value
+        self.time = ride["departuredTime"].int16Value
     }
 }
