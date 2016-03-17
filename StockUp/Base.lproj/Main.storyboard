@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
         <!--Login View Controller-->
@@ -49,6 +49,7 @@
                                 <state key="normal" title="Sign Up"/>
                                 <connections>
                                     <action selector="signupButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M6Y-gk-XMi"/>
+                                    <segue destination="g2D-py-dKK" kind="modal" identifier="signupSegue" id="Chb-MC-zMY"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -107,7 +108,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lMs-UU-Ofx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-214" y="424"/>
+            <point key="canvasLocation" x="-215" y="465"/>
         </scene>
         <!--Sign Up-->
         <scene sceneID="Akt-Rf-258">
@@ -152,6 +153,15 @@
                                     <action selector="createaccountButton:" destination="g2D-py-dKK" eventType="touchUpInside" id="Msw-EM-1Ft"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ibm-Dk-6W3">
+                                <rect key="frame" x="19" y="20" width="48" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelButton:" destination="g2D-py-dKK" eventType="touchUpInside" id="zWc-w6-LOo"/>
+                                    <segue destination="BYZ-38-t0r" kind="modal" identifier="cancelSegue" id="Nio-FP-3aY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -191,5 +201,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="hqb-3R-fuM"/>
+        <segue reference="Nio-FP-3aY"/>
     </inferredMetricsTieBreakers>
 </document>

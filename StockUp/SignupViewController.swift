@@ -26,6 +26,11 @@ class SignupViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    @IBAction func cancelButton(sender: AnyObject) {
+        self.performSegueWithIdentifier("cancelSegue", sender: nil)
+    
+    }
+    
     @IBAction func createaccountButton(sender: AnyObject) {
         let newUser = PFUser()
         newUser.username = usernameTextField.text
