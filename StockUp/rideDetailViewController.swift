@@ -9,7 +9,31 @@
 import UIKit
 
 class rideDetailViewController: UIViewController {
+    
+    var ride : Ride!
+    
+    //Outlets
+    @IBOutlet weak var imageView: UIImageView!
 
+    @IBOutlet weak var destionation: UILabel!
+    
+    @IBOutlet weak var time: UILabel!
+    
+    @IBOutlet weak var destAddress: UILabel!
+    
+    @IBOutlet weak var price: UILabel!
+    
+    @IBOutlet weak var driverName: UILabel!
+    
+    @IBOutlet weak var contactLabel: UILabel!
+    
+    @IBOutlet weak var phone: UILabel!
+    
+    //Actions
+    @IBAction func onRequest(sender: AnyObject) {
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
