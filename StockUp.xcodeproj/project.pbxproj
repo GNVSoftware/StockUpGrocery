@@ -17,6 +17,7 @@
 		0AE91D521C6428EE00D2E2C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AE91D501C6428EE00D2E2C8 /* LaunchScreen.storyboard */; };
 		815399C91C9A72D700D42530 /* searchRidesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815399C81C9A72D700D42530 /* searchRidesViewController.swift */; };
 		815399CC1C9A732400D42530 /* rideCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815399CB1C9A732400D42530 /* rideCell.swift */; };
+		815399CE1C9CA30900D42530 /* rideDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815399CD1C9CA30900D42530 /* rideDetailViewController.swift */; };
 		8166EB111C98CB34002F7CAB /* searchRides.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8166EB0F1C98CB34002F7CAB /* searchRides.storyboard */; };
 		8166EB131C98CB5D002F7CAB /* postRide.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8166EB121C98CB5D002F7CAB /* postRide.storyboard */; };
 		8A65B23828E086960CBDCD33 /* Pods_StockUp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88A062A8EFFA275141B01940 /* Pods_StockUp.framework */; };
@@ -40,6 +41,7 @@
 		75649DB13D7A8FFA32449589 /* Pods-StockUp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockUp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StockUp/Pods-StockUp.debug.xcconfig"; sourceTree = "<group>"; };
 		815399C81C9A72D700D42530 /* searchRidesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = searchRidesViewController.swift; sourceTree = "<group>"; };
 		815399CB1C9A732400D42530 /* rideCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = rideCell.swift; sourceTree = "<group>"; };
+		815399CD1C9CA30900D42530 /* rideDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = rideDetailViewController.swift; sourceTree = "<group>"; };
 		8166EB101C98CB34002F7CAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/searchRides.storyboard; sourceTree = "<group>"; };
 		8166EB121C98CB5D002F7CAB /* postRide.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = postRide.storyboard; sourceTree = "<group>"; };
 		88A062A8EFFA275141B01940 /* Pods_StockUp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StockUp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,6 +79,7 @@
 				B59FD4BB1C9201CA00A476B3 /* SignupViewController.swift */,
 				B59FD4BD1C9201DA00A476B3 /* ProfileViewController.swift */,
 				815399C81C9A72D700D42530 /* searchRidesViewController.swift */,
+				815399CD1C9CA30900D42530 /* rideDetailViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 			files = (
 				B59FD4BC1C9201CA00A476B3 /* SignupViewController.swift in Sources */,
 				815399CC1C9A732400D42530 /* rideCell.swift in Sources */,
+				815399CE1C9CA30900D42530 /* rideDetailViewController.swift in Sources */,
 				0A03E7601C91BE0400E8F21D /* postRidesViewController.swift in Sources */,
 				0A03E7621C91BE9600E8F21D /* Ride.swift in Sources */,
 				815399C91C9A72D700D42530 /* searchRidesViewController.swift in Sources */,

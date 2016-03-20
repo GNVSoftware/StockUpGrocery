@@ -76,6 +76,7 @@
                                             <outlet property="priceLabel" destination="Kn0-W8-NEI" id="blA-F2-lpa"/>
                                             <outlet property="seatsLabel" destination="fR1-z4-Fgy" id="695-uX-Ket"/>
                                             <outlet property="timeLabel" destination="02O-gv-8aQ" id="XJV-Hy-tzR"/>
+                                            <segue destination="W0r-Gt-buz" kind="modal" id="4wl-OI-e5m"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -92,6 +93,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="179-ql-MsN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-753" y="1256"/>
+        </scene>
+        <!--Ride Detail View Controller-->
+        <scene sceneID="6dD-k9-9D8">
+            <objects>
+                <viewController id="W0r-Gt-buz" customClass="rideDetailViewController" customModule="StockUp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1QT-0R-R5Q">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detail View" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QR6-QN-AU6">
+                                <rect key="frame" x="117" y="51" width="86" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="uoo-oH-y0b">
+                                <rect key="frame" x="260" y="20" width="48" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="onCancel:" destination="W0r-Gt-buz" eventType="touchUpInside" id="4YZ-Sk-6iF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ob2-kS-LR4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EvP-MK-Q3S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-309" y="1257"/>
         </scene>
     </scenes>
 </document>
