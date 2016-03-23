@@ -142,6 +142,7 @@ class postRidesViewController: UIViewController, CLLocationManagerDelegate {
                 } else {
                     // Mark the user as an active driver
                     User.user = userType.activeDriver
+                    User.setUpProfile()
                     print("Posted Ride Successfully")
                     //EZLoadingActivity.hide()
                     

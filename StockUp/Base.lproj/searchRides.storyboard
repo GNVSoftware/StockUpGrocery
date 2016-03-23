@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Xcl-Af-K3b">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="j8E-mX-2TI">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
-        <!--Search Rides-->
+        <!--Search Rides View Controller-->
         <scene sceneID="BCw-sV-DQS">
             <objects>
                 <viewController id="Xcl-Af-K3b" customClass="searchRidesViewController" customModule="StockUp" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,10 +19,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="rideCell" rowHeight="104" id="6jx-pm-mbl" customClass="rideCell" customModule="StockUp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="104"/>
+                                        <rect key="frame" x="0.0" y="92" width="320" height="104"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6jx-pm-mbl" id="zrN-sB-pLd">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="103.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="103"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Driver Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bu4-PK-oMI">
@@ -84,7 +84,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Search Rides" id="Myp-hj-YZL"/>
+                    <navigationItem key="navigationItem" id="Sdy-OC-Lto"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="9U6-jF-C44" id="LUb-Y2-t6J"/>
@@ -92,7 +92,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="179-ql-MsN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-753" y="1256"/>
+            <point key="canvasLocation" x="-221" y="1256"/>
         </scene>
         <!--Ride Detail View Controller-->
         <scene sceneID="6dD-k9-9D8">
@@ -186,7 +186,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EvP-MK-Q3S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-309" y="1257"/>
+            <point key="canvasLocation" x="223" y="1257"/>
+        </scene>
+        <!--Search Rides-->
+        <scene sceneID="843-Nd-uWw">
+            <objects>
+                <navigationController storyboardIdentifier="searchViewController" automaticallyAdjustsScrollViewInsets="NO" id="j8E-mX-2TI" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Search Rides" id="Myp-hj-YZL"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="t6e-ix-F1u">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Xcl-Af-K3b" kind="relationship" relationship="rootViewController" id="5Lq-fp-Wdb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DAc-am-uoD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-753" y="1256"/>
         </scene>
     </scenes>
 </document>

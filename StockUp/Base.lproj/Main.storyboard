@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
         <!--Login View Controller-->
@@ -58,14 +58,13 @@
                     <connections>
                         <outlet property="passwordTextField" destination="MaR-0A-tBJ" id="vVM-r8-9je"/>
                         <outlet property="usernameTextField" destination="CCr-Qu-d3Z" id="ySt-0Z-BL2"/>
-                        <segue destination="v29-5f-9cj" kind="modal" identifier="loginSegue" id="MSD-Sa-dMc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-527" y="-303"/>
         </scene>
-        <!--Active Ride-->
+        <!--Profile View Controller-->
         <scene sceneID="tgw-AK-yak">
             <objects>
                 <viewController id="ULw-MZ-tn5" customClass="ProfileViewController" customModule="StockUp" customModuleProvider="target" sceneMemberID="viewController">
@@ -73,8 +72,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="YMN-LK-xd6">
-                                <rect key="frame" x="130" y="269" width="60" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Inactive " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="D9K-b4-dxb">
+                                <rect key="frame" x="117" y="118" width="64" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="aHh-31-5eU">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="XHd-sB-nzi">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="YMN-LK-xd6">
+                                <rect key="frame" x="244" y="7" width="60" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Sign Out"/>
                                 <connections>
@@ -82,33 +93,60 @@
                                     <segue destination="BYZ-38-t0r" kind="modal" identifier="signoutSegue" id="NMh-Lg-F4K"/>
                                 </connections>
                             </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Active Ride" id="wal-Ip-8cH"/>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g0D-vw-vWL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="349" y="1256"/>
+            <point key="canvasLocation" x="848" y="546"/>
         </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="ykM-Fr-uFH">
+        <!--View Controller-->
+        <scene sceneID="Ckk-YM-7Eu">
             <objects>
-                <tabBarController storyboardIdentifier="tabBarController" id="v29-5f-9cj" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="jiR-H6-QVR">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="Jfe-AJ-On7" kind="relationship" relationship="viewControllers" id="mJ1-8j-bfP"/>
-                        <segue destination="L6z-dJ-Kwg" kind="relationship" relationship="viewControllers" id="1vS-jw-Fqr"/>
-                        <segue destination="ULw-MZ-tn5" kind="relationship" relationship="viewControllers" id="fRk-PD-eaz"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lMs-UU-Ofx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="Pws-JM-rUa" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Obs-dK-gi8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="active Driver" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8se-Nz-RUz">
+                                <rect key="frame" x="85" y="106" width="96" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="UeC-ah-4ru"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A8h-Or-wgt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-215" y="465"/>
+            <point key="canvasLocation" x="1822" y="554"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="MeZ-xd-mQy">
+            <objects>
+                <viewController id="vjf-KL-FM2" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fkC-Wu-6Bo">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="active Rider" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aws-IM-dEJ">
+                                <rect key="frame" x="90" y="112" width="91" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="6HN-iC-0aX"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qUW-8Q-jeN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="894" y="1246"/>
         </scene>
         <!--Sign Up-->
         <scene sceneID="Akt-Rf-258">
@@ -171,7 +209,6 @@
                         <outlet property="passwordTextField" destination="HUu-sU-Fhb" id="uas-zn-CEq"/>
                         <outlet property="phoneTextField" destination="sdt-Gl-hVG" id="8DQ-60-ktl"/>
                         <outlet property="usernameTextField" destination="Meg-tn-Box" id="6G8-XO-8fX"/>
-                        <segue destination="v29-5f-9cj" kind="modal" identifier="loginSegue" id="hqb-3R-fuM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uUz-tY-YwH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -186,7 +223,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mBM-SU-06B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-709.5" y="952"/>
+            <point key="canvasLocation" x="-761.5" y="260"/>
         </scene>
         <!--postRide-->
         <scene sceneID="k9K-3R-fbf">
@@ -196,11 +233,64 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ufj-XM-82W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-214" y="952"/>
+            <point key="canvasLocation" x="-514.5" y="260"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="HT3-MT-Rig">
+            <objects>
+                <navigationController storyboardIdentifier="inactiveViewController" automaticallyAdjustsScrollViewInsets="NO" id="wZZ-Bj-wGY" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bzN-eV-9Hu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ULw-MZ-tn5" kind="relationship" relationship="rootViewController" id="WmF-nw-Hno"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dub-Or-0Lc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="362" y="554"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="0aB-aC-IQ5">
+            <objects>
+                <navigationController storyboardIdentifier="activeDriverViewController" automaticallyAdjustsScrollViewInsets="NO" id="Noh-v5-SaJ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="EL9-L4-cbq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Pws-JM-rUa" kind="relationship" relationship="rootViewController" id="har-UK-5Ls"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qdS-yc-Jm6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1290" y="554"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="wcI-6G-iEd">
+            <objects>
+                <navigationController storyboardIdentifier="activeRiderViewController" automaticallyAdjustsScrollViewInsets="NO" id="ZIb-RL-agp" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QM2-ZO-Lxg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vjf-KL-FM2" kind="relationship" relationship="rootViewController" id="GRa-bv-XvL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J9D-x1-tep" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="362" y="1246"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="hqb-3R-fuM"/>
         <segue reference="NMh-Lg-F4K"/>
     </inferredMetricsTieBreakers>
 </document>

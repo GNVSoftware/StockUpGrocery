@@ -48,8 +48,7 @@ class rideDetailViewController: UIViewController {
                         
                         // Mark the User as a Rider
                         User.user = userType.activeRider
-                        // Redirect the User to active rides page
-                        self.tabBarController?.selectedIndex = 2
+                        User.setUpProfile()
                     } else {
                         // There was a problem, check error.description
                         print("error in sending the request")

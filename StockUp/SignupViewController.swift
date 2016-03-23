@@ -42,7 +42,7 @@ class SignupViewController: UIViewController {
                 print("created a new user")
             print(newUser["phone"])
             print(newUser["name"])
-                self.performSegueWithIdentifier(("loginSegue"), sender: nil)
+                User.setUpProfile()
             }  else {
                 print(error?.localizedDescription)
                 if error?.code == 202 {
@@ -50,7 +50,6 @@ class SignupViewController: UIViewController {
                 }else{
                     var alert = UIAlertView(title: "Error", message: "\(error)", delegate: self, cancelButtonTitle: "OK")
                     alert.show()
-
                 }
             }
         }
