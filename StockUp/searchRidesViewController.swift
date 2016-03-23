@@ -119,14 +119,17 @@ class searchRidesViewController: UIViewController, UITableViewDelegate, UITableV
         }
     }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        let vc = segue.destinationViewController as! rideDetailViewController
+        // Set the ride in the detail view controller
+        let cell = sender as! UITableViewCell
+        let indexPath = tableView.indexPathForCell(cell)
+        vc.ride = rides![indexPath!.row]
     }
-    */
-
 }

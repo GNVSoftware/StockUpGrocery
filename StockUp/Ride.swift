@@ -14,6 +14,7 @@ import SwiftyJSON
 class Ride: NSObject {
     
     //Properties
+    var postId : String
     var destination : String
     var destAddress : String
     var driver : String
@@ -23,6 +24,7 @@ class Ride: NSObject {
     
     init(ride : JSON){
         // code goes here
+        self.postId = ride["_id"].stringValue
         self.destination = ride["destinationName"].stringValue
         self.destAddress = ride["destinationAddress"].stringValue
         self.driver = ride["driverID"]["name"].stringValue

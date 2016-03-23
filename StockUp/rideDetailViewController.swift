@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class rideDetailViewController: UIViewController {
     
@@ -24,13 +25,40 @@ class rideDetailViewController: UIViewController {
     @IBOutlet weak var price: UILabel!
     
     @IBOutlet weak var driverName: UILabel!
-    
-    @IBOutlet weak var contactLabel: UILabel!
-    
-    @IBOutlet weak var phone: UILabel!
+        
+    // Segue Controller
     
     //Actions
     @IBAction func onRequest(sender: AnyObject) {
+        // create a nee request for the post
+        // Get the post for that id
+        let query = PFQuery(className:"Post")
+        query.getObjectInBackgroundWithId(ride.postId) {
+            (post : PFObject?, error: NSError?) -> Void in
+            if error == nil && post != nil {
+                // Reduce the number of spots left!!
+                let request = PFObject(className:"Request")
+                request["postId"] = self.ride.postId
+                request["rider"] = PFUser.currentUser()?.objectId
+                request.saveInBackgroundWithBlock {
+                    (success: Bool, error: NSError?) -> Void in
+                    if (success) {
+                        //
+                        print("request posted successfully")
+                        
+                        // Mark the User as a Rider
+                        User.user = userType.activeRider
+                        // Redirect the User to active rides page
+                        self.tabBarController?.selectedIndex = 2
+                    } else {
+                        // There was a problem, check error.description
+                        print("error in sending the request")
+                    }
+                }
+            } else {
+                print(error)
+            }
+        }
     }
     
     
@@ -38,6 +66,11 @@ class rideDetailViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        destionation.text = ride.destination
+        destAddress.text = ride.destAddress
+        time.text = String(ride.time)
+        price.text = String(ride.price)
+        driverName.text = ride.driver
     }
 
     override func didReceiveMemoryWarning() {

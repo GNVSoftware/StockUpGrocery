@@ -139,9 +139,9 @@ class postRidesViewController: UIViewController, CLLocationManagerDelegate {
             postRide.postRide(destination!, currentLocation: currentLocation!, currentLatitude: currentLat, currentLongitude: currentLong, price: price, seatsAvailable: seatsAvail, withCompletion: { (success: Bool, error: NSError?) -> Void in
                 if let error = error {
                     print(error.localizedDescription)
-                    
-                    
                 } else {
+                    // Mark the user as an active driver
+                    User.user = userType.activeDriver
                     print("Posted Ride Successfully")
                     //EZLoadingActivity.hide()
                     

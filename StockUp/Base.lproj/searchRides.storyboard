@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
-        <!--Item 1-->
+        <!--Search Rides-->
         <scene sceneID="BCw-sV-DQS">
             <objects>
                 <viewController id="Xcl-Af-K3b" customClass="searchRidesViewController" customModule="StockUp" customModuleProvider="target" sceneMemberID="viewController">
@@ -84,7 +84,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="Myp-hj-YZL"/>
+                    <tabBarItem key="tabBarItem" title="Search Rides" id="Myp-hj-YZL"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="9U6-jF-C44" id="LUb-Y2-t6J"/>
@@ -171,31 +171,15 @@
                                     <action selector="onRequest:" destination="W0r-Gt-buz" eventType="touchUpInside" id="fCo-jq-jpt"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dcY-XI-CUL">
-                                <rect key="frame" x="73" y="403" width="61" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fL9-wh-SCq">
-                                <rect key="frame" x="185" y="403" width="49" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="Ob2-kS-LR4"/>
                     <connections>
-                        <outlet property="contactLabel" destination="dcY-XI-CUL" id="hT3-td-cTb"/>
                         <outlet property="destAddress" destination="aZq-DD-OvZ" id="7NQ-8y-MJ7"/>
                         <outlet property="destionation" destination="z1e-1D-wQ4" id="w8f-sl-Iaz"/>
                         <outlet property="driverName" destination="pqg-Cr-6yr" id="hi2-ky-CeL"/>
                         <outlet property="imageView" destination="lmH-rc-SJ0" id="iNK-jt-M2w"/>
-                        <outlet property="phone" destination="fL9-wh-SCq" id="5IR-m0-zFG"/>
                         <outlet property="price" destination="m4i-dS-4Hj" id="37m-3O-KG8"/>
                         <outlet property="time" destination="cWU-Fq-jh4" id="uGO-d9-Xhv"/>
                     </connections>
