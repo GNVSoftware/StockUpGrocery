@@ -38,14 +38,14 @@ class rideDetailViewController: UIViewController {
             if error == nil && post != nil {
                 // Reduce the number of spots left!!
                 let request = PFObject(className:"Request")
-                request["postId"] = self.ride.postId
-                request["rider"] = PFUser.currentUser()?.objectId
+                request["driverID"] = self.ride.driver
+                request["riderID"] = PFUser.currentUser()?.objectId
+                request["postID"] = self.ride.postId
                 request.saveInBackgroundWithBlock {
                     (success: Bool, error: NSError?) -> Void in
                     if (success) {
-                        //
-                        print("request posted successfully")
-                        
+                        // Save the Active ID as the Request ID
+                        User.activeRideID = request.objectId!
                         // Mark the User as a Rider
                         User.user = userType.activeRider
                         User.setUpProfile()

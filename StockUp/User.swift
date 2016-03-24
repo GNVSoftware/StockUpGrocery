@@ -12,6 +12,7 @@ import UIKit
 struct User {
     static var user : userType = userType()
     static var window : UIWindow?
+    static var activeRideID : String?
     
     static func setUpProfile(){
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
