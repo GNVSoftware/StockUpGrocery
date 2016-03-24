@@ -28,7 +28,7 @@ class Ride: NSObject {
         self.postId = ride["_id"].stringValue
         self.destination = ride["destinationName"].stringValue
         self.destAddress = ride["destinationAddress"].stringValue
-        self.driverId = ride["driverID"].stringValue
+        self.driverId = ride["driverID"]["_id"].stringValue
         self.driver = ride["driverID"]["name"].stringValue
         self.seats = ride["seatsAvailable"].int16Value
         self.price = ride["price"].int16Value
