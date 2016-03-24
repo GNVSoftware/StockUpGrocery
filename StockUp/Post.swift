@@ -13,10 +13,10 @@ import GoogleMaps
 class Post: NSObject {
     
     
-    func postRide(destination: GMSPlace, currentLocation: GMSPlace, currentLatitude: Double, currentLongitude: Double, price: Int, seatsAvailable: Int) {
+    func postRide(destination: GMSPlace, currentLocation: GMSPlace, currentLatitude: Double, currentLongitude: Double, price: Double, seatsAvailable: Int) {
         let newRide = PFObject(className:"Post")
         
-        newRide["price"] = price
+        newRide["doublePrice"] = price
         newRide["seatsAvailable"] = seatsAvailable
         newRide["departuredTime"] = 5 //temporary
         newRide["destinationAddress"] = destination.formattedAddress!.componentsSeparatedByString(", ").joinWithSeparator("\n")

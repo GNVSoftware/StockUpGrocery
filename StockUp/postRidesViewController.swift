@@ -10,8 +10,10 @@ import UIKit
 import Parse
 import GoogleMaps
 
-class postRidesViewController: UIViewController, CLLocationManagerDelegate {
+class postRidesViewController: UIViewController, CLLocationManagerDelegate,  UIPickerViewDataSource, UIPickerViewDelegate {
+    var priceOptions = [ "0.00", "1.00", "2.00", "3.00", "4.00", "5.00", "6.00", "7.00", "8.00", "9.00", "10.00"]
     
+    var seatsOption = [ "1", "2", "3", "4", "5", "6"]
     var locationManager: CLLocationManager!
     /*
     var resultsViewController: GMSAutocompleteResultsViewController?
@@ -22,7 +24,7 @@ class postRidesViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var addressLabel: UILabel!
     var placesClient: GMSPlacesClient!
-    var price = 1
+    var price = 1.0
     var seatsAvail = 1
     var postRide = Post()
     @IBOutlet weak var priceTextField: UITextField!
@@ -31,12 +33,20 @@ class postRidesViewController: UIViewController, CLLocationManagerDelegate {
     var placePicker: GMSPlacePicker?
     var currentLocation : GMSPlace?
     var currentPoint: PFGeoPoint?
+    var pricePickerView = UIPickerView()
+    var seatPickerView = UIPickerView()
     
     var currentLat = 0.0
     var currentLong = 0.0
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        pricePickerView.delegate = self
+        seatPickerView.delegate = self
+        
+        priceTextField.inputView = pricePickerView
+        seatsTextField.inputView = seatPickerView
         locationManager = CLLocationManager()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
@@ -73,6 +83,36 @@ class postRidesViewController: UIViewController, CLLocationManagerDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
+        if pickerView == pricePickerView {
+            return priceOptions[row]
+        } else {
+            return seatsOption[row]
+        }
+    }
+    
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if pickerView == pricePickerView {
+            return priceOptions.count
+        } else {
+            return seatsOption.count
+        }
+    }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if pickerView == pricePickerView {
+            priceTextField.text = priceOptions[row]
+        } else {
+           seatsTextField.text = seatsOption[row]
+        }
+    }
+    
+    
+    
+    
     @IBAction func pickPlace(sender: UIButton) {
         let center = CLLocationCoordinate2DMake(currentLat, currentLong)
         let northEast = CLLocationCoordinate2DMake(center.latitude + 0.001, center.longitude + 0.001)
@@ -98,11 +138,14 @@ class postRidesViewController: UIViewController, CLLocationManagerDelegate {
         })
     }
     
+    @IBAction func onTapView(sender: AnyObject) {
+        view.endEditing(true)
+    }
     @IBAction func clickPost(sender: AnyObject) {
 //        EZLoadingActivity.show("Loading...", disableUI: false)
         if (destination!.name != "" && seatsAvail != 0) {
-            price = Int(priceTextField.text!)!
-            seatsAvail = Int(priceTextField.text!)!
+            price = Double(priceTextField.text!)!
+            seatsAvail = Int(seatsTextField.text!)!
             
             postRide.postRide(destination!, currentLocation: currentLocation!, currentLatitude: currentLat, currentLongitude: currentLong, price: price, seatsAvailable: seatsAvail)
         }
