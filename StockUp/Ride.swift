@@ -17,6 +17,7 @@ class Ride: NSObject {
     var postId : String
     var destination : String
     var destAddress : String
+    var driverId : String
     var driver : String
     var seats : Int16
     var price : Int16
@@ -27,6 +28,7 @@ class Ride: NSObject {
         self.postId = ride["_id"].stringValue
         self.destination = ride["destinationName"].stringValue
         self.destAddress = ride["destinationAddress"].stringValue
+        self.driverId = ride["driverID"].stringValue
         self.driver = ride["driverID"]["name"].stringValue
         self.seats = ride["seatsAvailable"].int16Value
         self.price = ride["price"].int16Value

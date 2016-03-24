@@ -38,7 +38,7 @@ class rideDetailViewController: UIViewController {
             if error == nil && post != nil {
                 // Reduce the number of spots left!!
                 let request = PFObject(className:"Request")
-                request["driverID"] = self.ride.driver
+                request["driverID"] = self.ride.driverId
                 request["riderID"] = PFUser.currentUser()?.objectId
                 request["postID"] = self.ride.postId
                 request.saveInBackgroundWithBlock {
