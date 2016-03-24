@@ -21,7 +21,7 @@ class postRidesViewController: UIViewController, CLLocationManagerDelegate,  UIP
     var resultView: UITextView?
     */
     @IBOutlet weak var nameLabel: UILabel!
-    
+    var time = ""
     @IBOutlet weak var addressLabel: UILabel!
     var placesClient: GMSPlacesClient!
     var price = 1.0
@@ -36,6 +36,8 @@ class postRidesViewController: UIViewController, CLLocationManagerDelegate,  UIP
     var pricePickerView = UIPickerView()
     var seatPickerView = UIPickerView()
     
+    
+    @IBOutlet weak var dateField: UITextField!
     var currentLat = 0.0
     var currentLong = 0.0
     override func viewDidLoad() {
@@ -82,6 +84,21 @@ class postRidesViewController: UIViewController, CLLocationManagerDelegate,  UIP
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func dateField(sender: UITextField) {
+        var datePicker : UIDatePicker = UIDatePicker()
+        datePicker.datePickerMode = UIDatePickerMode.Time
+        sender.inputView = datePicker
+         datePicker.addTarget(self, action: Selector("datePicker:"), forControlEvents: UIControlEvents.ValueChanged)
+        
+    }
+    func datePicker(sender: UIDatePicker) {
+        var timeFormatter = NSDateFormatter()
+        timeFormatter.dateStyle = .NoStyle
+        timeFormatter.timeStyle = .ShortStyle
+        dateField.text = timeFormatter.stringFromDate(sender.date)
+    }
+    
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1
@@ -146,8 +163,20 @@ class postRidesViewController: UIViewController, CLLocationManagerDelegate,  UIP
         if (destination!.name != "" && seatsAvail != 0) {
             price = Double(priceTextField.text!)!
             seatsAvail = Int(seatsTextField.text!)!
+            time = dateField.text!
+           
+            let dateAsString = time
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "h:mm a"
+            let date = dateFormatter.dateFromString(dateAsString)
             
-            postRide.postRide(destination!, currentLocation: currentLocation!, currentLatitude: currentLat, currentLongitude: currentLong, price: price, seatsAvailable: seatsAvail)
+            dateFormatter.dateFormat = "HH:mm"
+            let milTimeDate = dateFormatter.stringFromDate(date!)
+            
+            let milTime = dateFormatter.dateFromString(milTimeDate)
+            
+            
+            postRide.postRide(destination!, currentLocation: currentLocation!, currentLatitude: currentLat, currentLongitude: currentLong, price: price, seatsAvailable: seatsAvail, milTimeDate: milTime!)
         }
     }
 
