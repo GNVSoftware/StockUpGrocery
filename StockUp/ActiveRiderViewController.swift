@@ -14,10 +14,11 @@ class ActiveRiderViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let query = PFQuery(className:"Request")
-        query.getObjectInBackgroundWithId("string") {
-            (Request : PFObject?, error: NSError?) -> Void in
-        
-        
+        query.getObjectInBackgroundWithId(User.activeRideID!) {
+            (request : PFObject?, error: NSError?) -> Void in
+            if error == nil && request != nil {
+            
+            }
         
         
         }
