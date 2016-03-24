@@ -22,6 +22,7 @@
 		8166EB131C98CB5D002F7CAB /* postRide.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8166EB121C98CB5D002F7CAB /* postRide.storyboard */; };
 		81E2F0F01CA324650045BF0C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E2F0EF1CA324650045BF0C /* User.swift */; };
 		8A65B23828E086960CBDCD33 /* Pods_StockUp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88A062A8EFFA275141B01940 /* Pods_StockUp.framework */; };
+		B5108C1D1CA38C9200965B81 /* ActiveRiderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5108C1C1CA38C9200965B81 /* ActiveRiderViewController.swift */; };
 		B59FD4BA1C9201B200A476B3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59FD4B91C9201B200A476B3 /* LoginViewController.swift */; };
 		B59FD4BC1C9201CA00A476B3 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59FD4BB1C9201CA00A476B3 /* SignupViewController.swift */; };
 		B59FD4BE1C9201DA00A476B3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59FD4BD1C9201DA00A476B3 /* ProfileViewController.swift */; };
@@ -47,6 +48,7 @@
 		8166EB121C98CB5D002F7CAB /* postRide.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = postRide.storyboard; sourceTree = "<group>"; };
 		81E2F0EF1CA324650045BF0C /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		88A062A8EFFA275141B01940 /* Pods_StockUp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StockUp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5108C1C1CA38C9200965B81 /* ActiveRiderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveRiderViewController.swift; sourceTree = "<group>"; };
 		B59FD4B91C9201B200A476B3 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B59FD4BB1C9201CA00A476B3 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		B59FD4BD1C9201DA00A476B3 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				B59FD4BD1C9201DA00A476B3 /* ProfileViewController.swift */,
 				815399C81C9A72D700D42530 /* searchRidesViewController.swift */,
 				815399CD1C9CA30900D42530 /* rideDetailViewController.swift */,
+				B5108C1C1CA38C9200965B81 /* ActiveRiderViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				81E2F0F01CA324650045BF0C /* User.swift in Sources */,
+				B5108C1D1CA38C9200965B81 /* ActiveRiderViewController.swift in Sources */,
 				B59FD4BC1C9201CA00A476B3 /* SignupViewController.swift in Sources */,
 				815399CC1C9A732400D42530 /* rideCell.swift in Sources */,
 				815399CE1C9CA30900D42530 /* rideDetailViewController.swift in Sources */,
