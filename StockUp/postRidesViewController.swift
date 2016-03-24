@@ -24,7 +24,6 @@ class postRidesViewController: UIViewController, CLLocationManagerDelegate {
     var placesClient: GMSPlacesClient!
     var price = 1
     var seatsAvail = 1
-//    var rideModel = Ride()
     var postRide = Post()
     @IBOutlet weak var priceTextField: UITextField!
     @IBOutlet weak var seatsTextField: UITextField!
@@ -37,27 +36,7 @@ class postRidesViewController: UIViewController, CLLocationManagerDelegate {
     var currentLong = 0.0
     override func viewDidLoad() {
         super.viewDidLoad()
-        /*
-        resultsViewController = GMSAutocompleteResultsViewController()
-        resultsViewController?.delegate = self
-        
-        searchController = UISearchController(searchResultsController: resultsViewController)
-        searchController?.searchResultsUpdater = resultsViewController
-        
-        let subView = UIView(frame: CGRectMake(0, 65.0, 350.0, 45.0))
-        
-        subView.addSubview((searchController?.searchBar)!)
-        self.view.addSubview(subView)
-        searchController?.searchBar.sizeToFit()
-        searchController?.hidesNavigationBarDuringPresentation = false
-        
-        // When UISearchController presents the results view, present it in
-        // this view controller, not one further up the chain.
-        self.definesPresentationContext = true
-        */
-        
         // Do any additional setup after loading the view.
-        //let destPoint = PFGeoPoint(latitude:destination.coordinate.latitude, longitude:destination.coordinate.longitude )
         locationManager = CLLocationManager()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
@@ -78,31 +57,22 @@ class postRidesViewController: UIViewController, CLLocationManagerDelegate {
                 for likelihood in placeLikelihoods.likelihoods {
                     let currentplace = likelihood.place
                     self.currentLocation = currentplace
-                    
                     self.currentPoint = PFGeoPoint(latitude: currentplace.coordinate.latitude, longitude: currentplace.coordinate.longitude)
                     self.currentLat = currentplace.coordinate.latitude
                     self.currentLong = currentplace.coordinate.longitude
-                    
-                    print("Current Place name \(currentplace.name) at likelihood \(likelihood.likelihood)")
-                    print("Current Place address \(currentplace.formattedAddress)")
-                    print("Current Place attributions \(currentplace.attributions)")
-                    print("Current PlaceID \(currentplace.placeID)")
                 }
             } else {
                 print("nil")
             }
             
         })
-        
-    
     }
     
-
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     @IBAction func pickPlace(sender: UIButton) {
         let center = CLLocationCoordinate2DMake(currentLat, currentLong)
         let northEast = CLLocationCoordinate2DMake(center.latitude + 0.001, center.longitude + 0.001)
@@ -129,25 +99,12 @@ class postRidesViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     @IBAction func clickPost(sender: AnyObject) {
-        //EZLoadingActivity.show("Loading...", disableUI: false)
+//        EZLoadingActivity.show("Loading...", disableUI: false)
         if (destination!.name != "" && seatsAvail != 0) {
-            
             price = Int(priceTextField.text!)!
-            
             seatsAvail = Int(priceTextField.text!)!
             
-            postRide.postRide(destination!, currentLocation: currentLocation!, currentLatitude: currentLat, currentLongitude: currentLong, price: price, seatsAvailable: seatsAvail, withCompletion: { (success: Bool, error: NSError?) -> Void in
-                if let error = error {
-                    print(error.localizedDescription)
-                } else {
-                    // Mark the user as an active driver
-                    User.user = userType.activeDriver
-                    User.setUpProfile()
-                    print("Posted Ride Successfully")
-                    //EZLoadingActivity.hide()
-                    
-                }
-            })
+            postRide.postRide(destination!, currentLocation: currentLocation!, currentLatitude: currentLat, currentLongitude: currentLong, price: price, seatsAvailable: seatsAvail)
         }
     }
 
