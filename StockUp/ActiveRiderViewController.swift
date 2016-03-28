@@ -34,7 +34,7 @@ class ActiveRiderViewController: UIViewController {
                 
             self.destinationLabel.text = post!["destinationName"] as? String
             print(self.destinationLabel.text)
-            self.priceLabel.text = String(post!["price"] as! Int)
+            self.priceLabel.text = String(post!["doublePrice"] as! Double)
             post!.saveInBackground()
        
             print(driverid)//prints current driverid

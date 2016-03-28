@@ -8,11 +8,34 @@
 
 import Foundation
 import UIKit
+import Parse
 
 struct User {
     static var user : userType = userType()
     static var window : UIWindow?
     static var activeRideID : String?
+    
+    static func setUpUserProfile(){
+        // Check if it's an active rider
+        let activeStatus = PFUser.currentUser()?.objectForKey("isActive") as? Bool
+        if (activeStatus != nil && activeStatus == true){
+            let user = PFUser.currentUser()?.objectForKey("userType") as? String
+            
+            if (user != nil && user == "driver"){
+                // Get the Active ID
+                User.activeRideID = PFUser.currentUser()?.objectForKey("activeRideID") as? String
+                User.user = userType.activeDriver
+                User.setUpProfile()
+            }else if ( user != nil && user == "rider") {
+                // Get the Active ID
+                User.activeRideID = PFUser.currentUser()?.objectForKey("activeRideID") as? String
+                User.user = userType.activeRider
+                User.setUpProfile()
+            }
+        }else{
+            User.setUpProfile()
+        }
+    }
     
     static func setUpProfile(){
         let storyboard = UIStoryboard(name: "Main", bundle: nil)

@@ -14,8 +14,10 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var usernameTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        
+        // We have to create a user instance can be used 
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,7 +32,7 @@ class LoginViewController: UIViewController {
         PFUser.logInWithUsernameInBackground(usernameTextField.text!, password: passwordTextField.text!) { (user: PFUser?, error: NSError?) -> Void in
             if user != nil {
                 print("You're logged in")
-                User.setUpProfile()
+                User.setUpUserProfile()
             } else {
                 var alert = UIAlertView(title: "Error", message: "\(error)", delegate: self, cancelButtonTitle: "OK")
                 alert.show()

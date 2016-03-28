@@ -23,19 +23,6 @@ class ActiveDriverTableViewController : PFQueryTableViewController {
         pullToRefreshEnabled = true
         paginationEnabled = true
         objectsPerPage = 25
-        
-        
-        let query = PFQuery(className: "Requets")
-        query.whereKey("postID", equalTo : User.activeRideID!)
-        query.findObjectsInBackgroundWithBlock { (requests : [PFObject]?, error: NSError?) -> Void in
-            // List of Requests
-            if (requests != nil && error == nil){
-                self.riderIds = [String]()
-                for req in requests!{
-                    self.riderIds.append(req["riderID"] as! String)
-                }
-            }
-        }
     }
     
     required init?(coder aDecoder: NSCoder) {

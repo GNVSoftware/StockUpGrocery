@@ -34,8 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // check if user is logged in.
         if PFUser.currentUser() != nil {
-            // Setup Profile Here
-            User.setUpProfile()
+            User.setUpUserProfile()
         }
 
         return true

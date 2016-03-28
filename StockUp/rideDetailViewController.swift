@@ -44,6 +44,11 @@ class rideDetailViewController: UIViewController {
                 request.saveInBackgroundWithBlock {
                     (success: Bool, error: NSError?) -> Void in
                     if (success) {
+                        PFUser.currentUser()?.setValue(true, forKey: "isActive")
+                        PFUser.currentUser()?.setValue("rider", forKey: "userType")
+                        PFUser.currentUser()?.setValue(request.objectId!, forKey: "activeRideID")
+                    
+                        
                         // Save the Active ID as the Request ID
                         User.activeRideID = request.objectId!
                         // Mark the User as a Rider

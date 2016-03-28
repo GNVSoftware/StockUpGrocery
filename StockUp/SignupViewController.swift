@@ -40,9 +40,9 @@ class SignupViewController: UIViewController {
         newUser.signUpInBackgroundWithBlock { (success: Bool,error: NSError?) -> Void in
             if success {
                 print("created a new user")
-            print(newUser["phone"])
-            print(newUser["name"])
-                User.setUpProfile()
+                print(newUser["phone"])
+                print(newUser["name"])
+                User.setUpUserProfile()
             }  else {
                 print(error?.localizedDescription)
                 if error?.code == 202 {

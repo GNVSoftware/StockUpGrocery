@@ -44,6 +44,13 @@ class Post: NSObject {
             if let error = error {
                 print(error.localizedDescription)
             } else {
+                // Mark the user object in parse as active,
+                // Set the user type and the appropriate id
+                
+                PFUser.currentUser()?.setValue(true, forKey: "isActive")
+                PFUser.currentUser()?.setValue("driver", forKey: "userType")
+                PFUser.currentUser()?.setValue(newRide.objectId!, forKey: "activeRideID")
+                
                 // Mark the user as an active driver
                 User.user = userType.activeDriver
                 User.activeRideID = newRide.objectId!
