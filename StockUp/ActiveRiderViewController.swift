@@ -19,6 +19,7 @@ class ActiveRiderViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         let query = PFQuery(className:"Request")
         query.getObjectInBackgroundWithId(User.activeRideID!) {
             (request : PFObject?, error: NSError?) -> Void in
@@ -34,6 +35,7 @@ class ActiveRiderViewController: UIViewController {
             self.destinationLabel.text = post!["destinationName"] as? String
             print(self.destinationLabel.text)
             self.priceLabel.text = String(post!["price"] as! Int)
+            post!.saveInBackground()
        
             print(driverid)//prints current driverid
             print(postid)//prints current postid
@@ -45,6 +47,7 @@ class ActiveRiderViewController: UIViewController {
                     // Do something with the driver info
             self.nameLabel.text = user!["name"] as? String
             self.phoneLabel.text = user!["phone"] as? String
+            user!.saveInBackground()
             })
                 
                 

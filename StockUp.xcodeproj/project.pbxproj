@@ -23,9 +23,7 @@
 		81E2F0F01CA324650045BF0C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E2F0EF1CA324650045BF0C /* User.swift */; };
 		8A65B23828E086960CBDCD33 /* Pods_StockUp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88A062A8EFFA275141B01940 /* Pods_StockUp.framework */; };
 		B5108C1D1CA38C9200965B81 /* ActiveRiderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5108C1C1CA38C9200965B81 /* ActiveRiderViewController.swift */; };
-		B56D2C961CA4A495003D7E01 /* ActiveDriverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56D2C951CA4A495003D7E01 /* ActiveDriverViewController.swift */; };
-		B56D2C981CA4A5B2003D7E01 /* activedriverCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56D2C971CA4A5B2003D7E01 /* activedriverCell.swift */; };
-		B56D2C9A1CA4AE5B003D7E01 /* Rider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56D2C991CA4AE5B003D7E01 /* Rider.swift */; };
+		B56EB0C51CA88EC500439124 /* ActiveDriverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56EB0C41CA88EC500439124 /* ActiveDriverTableViewController.swift */; };
 		B59FD4BA1C9201B200A476B3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59FD4B91C9201B200A476B3 /* LoginViewController.swift */; };
 		B59FD4BC1C9201CA00A476B3 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59FD4BB1C9201CA00A476B3 /* SignupViewController.swift */; };
 		B59FD4BE1C9201DA00A476B3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59FD4BD1C9201DA00A476B3 /* ProfileViewController.swift */; };
@@ -52,9 +50,7 @@
 		81E2F0EF1CA324650045BF0C /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		88A062A8EFFA275141B01940 /* Pods_StockUp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StockUp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5108C1C1CA38C9200965B81 /* ActiveRiderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveRiderViewController.swift; sourceTree = "<group>"; };
-		B56D2C951CA4A495003D7E01 /* ActiveDriverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveDriverViewController.swift; sourceTree = "<group>"; };
-		B56D2C971CA4A5B2003D7E01 /* activedriverCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = activedriverCell.swift; sourceTree = "<group>"; };
-		B56D2C991CA4AE5B003D7E01 /* Rider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rider.swift; sourceTree = "<group>"; };
+		B56EB0C41CA88EC500439124 /* ActiveDriverTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveDriverTableViewController.swift; sourceTree = "<group>"; };
 		B59FD4B91C9201B200A476B3 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B59FD4BB1C9201CA00A476B3 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		B59FD4BD1C9201DA00A476B3 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -78,7 +74,6 @@
 				0A03E7611C91BE9600E8F21D /* Ride.swift */,
 				0A4FFEC91C9250A4005B8299 /* Post.swift */,
 				81E2F0EF1CA324650045BF0C /* User.swift */,
-				B56D2C991CA4AE5B003D7E01 /* Rider.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -93,7 +88,7 @@
 				815399C81C9A72D700D42530 /* searchRidesViewController.swift */,
 				815399CD1C9CA30900D42530 /* rideDetailViewController.swift */,
 				B5108C1C1CA38C9200965B81 /* ActiveRiderViewController.swift */,
-				B56D2C951CA4A495003D7E01 /* ActiveDriverViewController.swift */,
+				B56EB0C41CA88EC500439124 /* ActiveDriverTableViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -146,7 +141,6 @@
 			isa = PBXGroup;
 			children = (
 				815399CB1C9A732400D42530 /* rideCell.swift */,
-				B56D2C971CA4A5B2003D7E01 /* activedriverCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -287,16 +281,14 @@
 				81E2F0F01CA324650045BF0C /* User.swift in Sources */,
 				B5108C1D1CA38C9200965B81 /* ActiveRiderViewController.swift in Sources */,
 				B59FD4BC1C9201CA00A476B3 /* SignupViewController.swift in Sources */,
-				B56D2C981CA4A5B2003D7E01 /* activedriverCell.swift in Sources */,
 				815399CC1C9A732400D42530 /* rideCell.swift in Sources */,
-				B56D2C961CA4A495003D7E01 /* ActiveDriverViewController.swift in Sources */,
 				815399CE1C9CA30900D42530 /* rideDetailViewController.swift in Sources */,
 				0A03E7601C91BE0400E8F21D /* postRidesViewController.swift in Sources */,
 				0A03E7621C91BE9600E8F21D /* Ride.swift in Sources */,
 				815399C91C9A72D700D42530 /* searchRidesViewController.swift in Sources */,
 				0A4FFECA1C9250A4005B8299 /* Post.swift in Sources */,
 				0AE91D4A1C6428EE00D2E2C8 /* ViewController.swift in Sources */,
-				B56D2C9A1CA4AE5B003D7E01 /* Rider.swift in Sources */,
+				B56EB0C51CA88EC500439124 /* ActiveDriverTableViewController.swift in Sources */,
 				B59FD4BE1C9201DA00A476B3 /* ProfileViewController.swift in Sources */,
 				B59FD4BA1C9201B200A476B3 /* LoginViewController.swift in Sources */,
 				0AE91D481C6428EE00D2E2C8 /* AppDelegate.swift in Sources */,
