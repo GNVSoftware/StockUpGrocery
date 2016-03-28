@@ -34,11 +34,13 @@ Rides    - Rideid, DriverId, Spots Left, Time, Price, Destination
 Requests - Requestid, Ride Id, PassengerId, Passenger address
 
 ## Video Walkthrough 
+3/24 - http://i.imgur.com/5hceRKf.gif
+
 http://i.imgur.com/sbJrxS3.gif
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/sbJrxS3.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://i.imgur.com/5hceRKf.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
