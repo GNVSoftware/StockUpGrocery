@@ -7,10 +7,10 @@ Team: Franky Liang, Zhan Liang, Pranav Achanta
 
 The following **required** functionality is complete:
 
-- [ ] Passenger should be able to view all rides within 5 miles of his start point and  select one ride.
-- [x ] Driver should be able to post a ride giving details store address, price and no of seats available.
-- [ ] Nav Bar button goes to history of accepted rides
-- [ ] User can see all the requests on a map with the passenger location as pins on the map.
+- [X] Passenger should be able to view all rides within 5 miles of his start point and  select one ride.
+- [X] Driver should be able to post a ride giving details store address, price and no of seats available.
+- [X] Nav Bar button goes to history of accepted rides
+- [X] User can see all the requests on a map with the passenger location as pins on the map.
 
 The following **optional** features are implemented:
 
@@ -34,6 +34,14 @@ Rides    - Rideid, DriverId, Spots Left, Time, Price, Destination
 Requests - Requestid, Ride Id, PassengerId, Passenger address
 
 ## Video Walkthrough 
+
+Demo of User Stories:
+
+<img src='http://i.imgur.com/qjcmmY0.gif' title=‘Demo’ width='' alt='Video Walkthrough' />
+
+GIF created with [LiceCap](http://www.cockos.com/licecap/).
+
+
 3/24 - http://i.imgur.com/5hceRKf.gif
 
 http://i.imgur.com/sbJrxS3.gif
@@ -43,8 +51,6 @@ Here's a walkthrough of implemented user stories:
 <img src='http://i.imgur.com/5hceRKf.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
-
-
 ## Notes
 
 
