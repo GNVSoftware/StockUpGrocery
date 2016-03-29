@@ -51,6 +51,8 @@ class Post: NSObject {
                 PFUser.currentUser()?.setValue("driver", forKey: "userType")
                 PFUser.currentUser()?.setValue(newRide.objectId!, forKey: "activeRideID")
                 
+                PFUser.currentUser()?.saveInBackground()
+                
                 // Mark the user as an active driver
                 User.user = userType.activeDriver
                 User.activeRideID = newRide.objectId!

@@ -47,7 +47,8 @@ class rideDetailViewController: UIViewController {
                         PFUser.currentUser()?.setValue(true, forKey: "isActive")
                         PFUser.currentUser()?.setValue("rider", forKey: "userType")
                         PFUser.currentUser()?.setValue(request.objectId!, forKey: "activeRideID")
-                    
+                        PFUser.currentUser()?.saveInBackground()
+                        
                         
                         // Save the Active ID as the Request ID
                         User.activeRideID = request.objectId!
