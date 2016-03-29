@@ -42,6 +42,7 @@ class SignupViewController: UIViewController {
                 print("created a new user")
                 print(newUser["phone"])
                 print(newUser["name"])
+                User.tabBarController = UITabBarController()
                 User.setUpUserProfile()
             }  else {
                 print(error?.localizedDescription)

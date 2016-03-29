@@ -51,8 +51,8 @@ class Post: NSObject {
                 PFUser.currentUser()?.saveInBackground()
                 
                 
-                let expiryTime = NSDate().timeIntervalSinceDate(milTimeDate)
-                User.expiryTime = expiryTime
+//                let expiryTime = NSDate().timeIntervalSinceDate(milTimeDate)
+//                User.expiryTime = expiryTime
 
                 // Mark the user as an active driver
                 User.user = userType.activeDriver

@@ -57,13 +57,13 @@ class rideDetailViewController: UIViewController {
                         
                         
                         // Get the time for the timer
-                        let formatter = NSDateFormatter()
-                        formatter.dateFormat = "HH:mm"
-                        let postStartTime = formatter.dateFromString(post!["departureTime"] as! String)
-                        
-                        let expiryTime = NSDate().timeIntervalSinceDate(postStartTime!)
-                        
-                        User.expiryTime = expiryTime
+//                        let formatter = NSDateFormatter()
+//                        formatter.dateFormat = "HH:mm"
+//                        let postStartTime = formatter.dateFromString(post!["departureTime"] as! String)
+//                        
+//                        let expiryTime = NSDate().timeIntervalSinceDate(postStartTime!)
+//                        
+//                        User.expiryTime = expiryTime
                     } else {
                         // There was a problem, check error.description
                         print("error in sending the request")

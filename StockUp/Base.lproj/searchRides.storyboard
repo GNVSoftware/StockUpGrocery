@@ -76,7 +76,7 @@
                                             <outlet property="priceLabel" destination="Kn0-W8-NEI" id="blA-F2-lpa"/>
                                             <outlet property="seatsLabel" destination="fR1-z4-Fgy" id="695-uX-Ket"/>
                                             <outlet property="timeLabel" destination="02O-gv-8aQ" id="XJV-Hy-tzR"/>
-                                            <segue destination="W0r-Gt-buz" kind="modal" id="4wl-OI-e5m"/>
+                                            <segue destination="W0r-Gt-buz" kind="push" id="m1q-jG-jlZ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -192,7 +192,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EvP-MK-Q3S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="223" y="1257"/>
+            <point key="canvasLocation" x="254" y="1256"/>
         </scene>
         <!--Search Rides-->
         <scene sceneID="843-Nd-uWw">

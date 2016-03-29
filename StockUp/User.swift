@@ -35,6 +35,7 @@ struct User {
                 User.setUpProfile()
             }
         }else{
+            User.user = userType.inActive
             User.setUpProfile()
         }
     }
@@ -69,7 +70,7 @@ struct User {
             window?.makeKeyAndVisible()
             
         case userType.activeRider :
-            let activeRiderViewController = storyboard.instantiateViewControllerWithIdentifier("activeRiderViewController") as! UINavigationController
+            let activeRiderViewController = storyboard.instantiateViewControllerWithIdentifier("activeRiderNavController") as! UINavigationController
             activeRiderViewController.tabBarItem.title = "Active Ride"
             
 //            let tabBarController = UITabBarController()

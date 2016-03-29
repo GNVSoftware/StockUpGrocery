@@ -32,13 +32,13 @@ class LoginViewController: UIViewController {
         PFUser.logInWithUsernameInBackground(usernameTextField.text!, password: passwordTextField.text!) { (user: PFUser?, error: NSError?) -> Void in
             if user != nil {
                 print("You're logged in")
+                User.tabBarController = UITabBarController()
                 User.setUpUserProfile()
             } else {
                 var alert = UIAlertView(title: "Error", message: "\(error)", delegate: self, cancelButtonTitle: "OK")
                 alert.show()
 
             }
-
     }
     
 

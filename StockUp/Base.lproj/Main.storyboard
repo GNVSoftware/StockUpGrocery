@@ -340,7 +340,7 @@
         <!--Navigation Controller-->
         <scene sceneID="wcI-6G-iEd">
             <objects>
-                <navigationController storyboardIdentifier="activeRiderViewController" automaticallyAdjustsScrollViewInsets="NO" id="ZIb-RL-agp" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="activeRiderNavController" automaticallyAdjustsScrollViewInsets="NO" id="ZIb-RL-agp" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="QM2-ZO-Lxg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
