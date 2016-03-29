@@ -14,6 +14,8 @@ struct User {
     static var user : userType = userType()
     static var window : UIWindow?
     static var activeRideID : String?
+    static var expiryTime : NSTimeInterval?
+    static var tabBarController : UITabBarController?
     
     static func setUpUserProfile(){
         // Check if it's an active rider
@@ -59,9 +61,10 @@ struct User {
             inactiveViewController.tabBarItem.title = "Active Ride"
             
             
-            let tabBarController = UITabBarController()
-            tabBarController.viewControllers = [searchViewController, postViewController, inactiveViewController]
-            tabBarController.selectedViewController = inactiveViewController
+//            let tabBarController = UITabBarController()
+            tabBarController?.setViewControllers([searchViewController, postViewController], animated: true)
+//            tabBarController.viewControllers = [searchViewController, postViewController, inactiveViewController]
+            tabBarController?.selectedViewController = searchViewController
             window?.rootViewController  = tabBarController
             window?.makeKeyAndVisible()
             
@@ -69,9 +72,10 @@ struct User {
             let activeRiderViewController = storyboard.instantiateViewControllerWithIdentifier("activeRiderViewController") as! UINavigationController
             activeRiderViewController.tabBarItem.title = "Active Ride"
             
-            let tabBarController = UITabBarController()
-            tabBarController.viewControllers = [searchViewController, postViewController, activeRiderViewController]
-            tabBarController.selectedViewController = activeRiderViewController
+//            let tabBarController = UITabBarController()
+            tabBarController?.setViewControllers([activeRiderViewController], animated: true)
+//            tabBarController.viewControllers = [searchViewController, postViewController, activeRiderViewController]
+            tabBarController?.selectedViewController = activeRiderViewController
             window?.rootViewController  = tabBarController
             window?.makeKeyAndVisible()
             
@@ -80,9 +84,10 @@ struct User {
             let activeDriverViewController = storyboard.instantiateViewControllerWithIdentifier("activeDriverViewController") as! UINavigationController
             activeDriverViewController.tabBarItem.title = "Active Ride"
             
-            let tabBarController = UITabBarController()
-            tabBarController.viewControllers = [searchViewController, postViewController, activeDriverViewController]
-            tabBarController.selectedViewController = activeDriverViewController
+//            let tabBarController = UITabBarController()
+            tabBarController?.setViewControllers([activeDriverViewController], animated: true)
+//            tabBarController.viewControllers = [searchViewController, postViewController, activeDriverViewController]
+            tabBarController?.selectedViewController = activeDriverViewController
             
             window?.rootViewController  = tabBarController
             window?.makeKeyAndVisible()

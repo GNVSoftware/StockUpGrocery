@@ -27,9 +27,10 @@ class ProfileViewController: UIViewController {
             if(error != nil){
                 print(error!.localizedDescription)
             }else{
-                self.performSegueWithIdentifier("signoutSegue", sender: nil)
+                let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyboard.instantiateViewControllerWithIdentifier("loginViewController")
+                self.presentViewController(vc, animated:true, completion:nil)
             }
-            
         }
     }
 

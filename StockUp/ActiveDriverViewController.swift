@@ -16,7 +16,35 @@ class ActiveDriverViewController: UIViewController, UITableViewDelegate, UITable
     
     // Table View
     @IBOutlet weak var tableView: UITableView!
-
+    
+    // Actions
+    @IBAction func onSignOut(sender: AnyObject) {
+        // Logout the User and return to the Login Screen
+        
+        PFUser.logOutInBackgroundWithBlock { (error) -> Void in
+            if(error != nil){
+                print(error!.localizedDescription)
+            }else{
+                let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyboard.instantiateViewControllerWithIdentifier("loginViewController")
+                self.presentViewController(vc, animated:true, completion:nil)
+            }
+        }
+    }
+    
+    
+    @IBAction func onCancel(sender: AnyObject) {
+        // Make the User Inactive as well
+        
+        // Delete the Post from the Parse Backend
+        
+        // Also delete the Corresponding Requests from the Request Table
+        
+        // Return to the original state
+        User.user = userType.inActive
+        User.setUpProfile()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

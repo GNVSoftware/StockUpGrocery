@@ -49,12 +49,21 @@ class rideDetailViewController: UIViewController {
                         PFUser.currentUser()?.setValue(request.objectId!, forKey: "activeRideID")
                         PFUser.currentUser()?.saveInBackground()
                         
-                        
                         // Save the Active ID as the Request ID
                         User.activeRideID = request.objectId!
                         // Mark the User as a Rider
                         User.user = userType.activeRider
                         User.setUpProfile()
+                        
+                        
+                        // Get the time for the timer
+                        let formatter = NSDateFormatter()
+                        formatter.dateFormat = "HH:mm"
+                        let postStartTime = formatter.dateFromString(post!["departureTime"] as! String)
+                        
+                        let expiryTime = NSDate().timeIntervalSinceDate(postStartTime!)
+                        
+                        User.expiryTime = expiryTime
                     } else {
                         // There was a problem, check error.description
                         print("error in sending the request")
@@ -64,6 +73,16 @@ class rideDetailViewController: UIViewController {
                 print(error)
             }
         }
+    }
+    
+    func delayedAction(){
+        // Bring the State back to original state
+        
+        // What to do with the request!!.. Should we delete it or mark it
+        // as inactive??
+        
+        User.user = userType.inActive
+        User.setUpProfile()
     }
     
     

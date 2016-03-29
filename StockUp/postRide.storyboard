@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="4j1-GQ-C2f">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="4j1-GQ-C2f">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--Post Rides View Controller-->
@@ -113,7 +113,13 @@
                             <outletCollection property="gestureRecognizers" destination="3Kb-el-EM1" appends="YES" id="hbp-dW-eDS"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" id="IcC-D7-J1P"/>
+                    <navigationItem key="navigationItem" id="IcC-D7-J1P">
+                        <barButtonItem key="rightBarButtonItem" title="Sign Out" id="ALL-PK-gqB">
+                            <connections>
+                                <action selector="onLogOut:" destination="QWf-Np-POd" id="69J-w2-bUO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="addressLabel" destination="qpF-rP-oWh" id="W8l-1n-7LD"/>

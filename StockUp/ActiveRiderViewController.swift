@@ -11,12 +11,39 @@ import Parse
 
 class ActiveRiderViewController: UIViewController {
 
-   
+   // Outlets
     
     @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var destinationLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
+    
+    // Actions
+    
+    @IBAction func onLogOut(sender: AnyObject) {
+        PFUser.logOutInBackgroundWithBlock { (error) -> Void in
+            if(error != nil){
+                print(error!.localizedDescription)
+            }else{
+                let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyboard.instantiateViewControllerWithIdentifier("loginViewController")
+                self.presentViewController(vc, animated:true, completion:nil)
+            }
+        }
+    }
+    
+    
+    @IBAction func onCancel(sender: AnyObject) {
+        // Make the User Inactive as well
+        
+        
+        // Delete and Request Object from the Request Table
+        
+        // Return Back to original state
+        User.user = .inActive
+        User.setUpProfile()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

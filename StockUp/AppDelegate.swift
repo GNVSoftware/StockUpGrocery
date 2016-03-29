@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Setup the window in user
         User.window = window
+        User.tabBarController = UITabBarController()
         
         // Override point for customization after application launch.
         Parse.initializeWithConfiguration(

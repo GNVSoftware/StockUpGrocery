@@ -40,6 +40,22 @@ class postRidesViewController: UIViewController, CLLocationManagerDelegate,  UIP
     @IBOutlet weak var dateField: UITextField!
     var currentLat = 0.0
     var currentLong = 0.0
+    
+    
+    // Actions
+    @IBAction func onLogOut(sender: AnyObject) {
+        PFUser.logOutInBackgroundWithBlock { (error) -> Void in
+            if(error != nil){
+                print(error!.localizedDescription)
+            }else{
+                let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyboard.instantiateViewControllerWithIdentifier("loginViewController")
+                self.presentViewController(vc, animated:true, completion:nil)
+            }
+        }
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -86,14 +102,14 @@ class postRidesViewController: UIViewController, CLLocationManagerDelegate,  UIP
     }
     
     @IBAction func dateField(sender: UITextField) {
-        var datePicker : UIDatePicker = UIDatePicker()
+        let datePicker : UIDatePicker = UIDatePicker()
         datePicker.datePickerMode = UIDatePickerMode.Time
         sender.inputView = datePicker
-         datePicker.addTarget(self, action: Selector("datePicker:"), forControlEvents: UIControlEvents.ValueChanged)
+         datePicker.addTarget(self, action: #selector(postRidesViewController.datePicker(_:)), forControlEvents: UIControlEvents.ValueChanged)
         
     }
     func datePicker(sender: UIDatePicker) {
-        var timeFormatter = NSDateFormatter()
+        let timeFormatter = NSDateFormatter()
         timeFormatter.dateStyle = .NoStyle
         timeFormatter.timeStyle = .ShortStyle
         dateField.text = timeFormatter.stringFromDate(sender.date)
@@ -103,7 +119,7 @@ class postRidesViewController: UIViewController, CLLocationManagerDelegate,  UIP
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1
     }
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if pickerView == pricePickerView {
             return priceOptions[row]
         } else {

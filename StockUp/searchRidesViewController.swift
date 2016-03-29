@@ -9,6 +9,7 @@
 import UIKit
 import SwiftyJSON
 import CoreLocation
+import Parse
 
 class searchRidesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate {
     
@@ -17,6 +18,20 @@ class searchRidesViewController: UIViewController, UITableViewDelegate, UITableV
     var locationManager: CLLocationManager!
     var currentLocation: CLLocationCoordinate2D!
     var locationSet = false
+    
+    // Actions
+    
+    @IBAction func onLogOut(sender: AnyObject) {
+        PFUser.logOutInBackgroundWithBlock { (error) -> Void in
+            if(error != nil){
+                print(error!.localizedDescription)
+            }else{
+                let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyboard.instantiateViewControllerWithIdentifier("loginViewController")
+                self.presentViewController(vc, animated:true, completion:nil)
+            }
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

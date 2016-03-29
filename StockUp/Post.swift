@@ -18,7 +18,6 @@ class Post: NSObject {
         
         newRide["doublePrice"] = price
         newRide["seatsAvailable"] = seatsAvailable
-        newRide["departuredTime"] = 5 //temporary
         newRide["destinationAddress"] = destination.formattedAddress!.componentsSeparatedByString(", ").joinWithSeparator("\n")
         
 //        let destPoint = PFGeoPoint(latitude:destination.coordinate.latitude, longitude:destination.coordinate.longitude )
@@ -32,10 +31,8 @@ class Post: NSObject {
         newRide["departureTime"] = milTimeDate
         newRide["destinationName"] = destination.name
         newRide["driverID"] = PFUser.currentUser()?.objectId
-        
         newRide["destinationPlaceID"] = destination.placeID
         newRide["currentLocationID"] = currentLocation.placeID
-        
         newRide["currentLocation"] = [currentLongitude, currentLatitude]
         newRide["destinationLocation"] = [destination.coordinate.longitude, destination.coordinate.latitude]
         
@@ -53,6 +50,10 @@ class Post: NSObject {
                 
                 PFUser.currentUser()?.saveInBackground()
                 
+                
+                let expiryTime = NSDate().timeIntervalSinceDate(milTimeDate)
+                User.expiryTime = expiryTime
+
                 // Mark the user as an active driver
                 User.user = userType.activeDriver
                 User.activeRideID = newRide.objectId!
@@ -63,6 +64,15 @@ class Post: NSObject {
                 
             }
         }
+    }
+    
+    func delayedAction(){
+        // Check if you have to delete the Post Object
+
+        
+        // Return to the Orginal State
+        User.user = userType.inActive
+        User.setUpProfile()
     }
 
 }
