@@ -34,10 +34,12 @@ class ActiveRiderViewController: UIViewController {
     
     
     @IBAction func onCancel(sender: AnyObject) {
-        // Make the User Inactive as well
+        // Make the User Inactive
+        PFUser.currentUser()?.setValue(true, forKey: "isActive")
+        PFUser.currentUser()?.saveInBackground()
         
-        
-        // Delete and Request Object from the Request Table
+        // Delete the Request Object from the User Table as well as the
+        // the request Table
         
         // Return Back to original state
         User.user = .inActive

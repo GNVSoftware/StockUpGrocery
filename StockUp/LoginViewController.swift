@@ -35,9 +35,17 @@ class LoginViewController: UIViewController {
                 User.tabBarController = UITabBarController()
                 User.setUpUserProfile()
             } else {
-                var alert = UIAlertView(title: "Error", message: "\(error)", delegate: self, cancelButtonTitle: "OK")
-                alert.show()
-
+//                var alert = UIAlertView(title: "Error", message: "\(error)", delegate: self, cancelButtonTitle: "OK")
+//                alert.show()
+                
+                // create the alert
+                let alert = UIAlertController(title: "UIAlertController", message: "\(error)", preferredStyle: UIAlertControllerStyle.Alert)
+                
+                // add the actions (buttons)
+                alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
+                
+                // show the alert
+                self.presentViewController(alert, animated: true, completion: nil)
             }
     }
     

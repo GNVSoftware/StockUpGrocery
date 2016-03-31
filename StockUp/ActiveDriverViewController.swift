@@ -33,14 +33,15 @@ class ActiveDriverViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     
-    @IBAction func onCancel(sender: AnyObject) {
-        // Make the User Inactive as well
+    @IBAction func onCancel(sender: AnyObject) {        
+        // Make the User Inactive
+        PFUser.currentUser()?.setValue(true, forKey: "isActive")
+        PFUser.currentUser()?.saveInBackground()
         
-        // Delete the Post from the Parse Backend
+        // Delete the Post Object from Post table
         
-        // Also delete the Corresponding Requests from the Request Table
-        
-        // Return to the original state
+    
+        // Return to the Original state
         User.user = userType.inActive
         User.setUpProfile()
     }
