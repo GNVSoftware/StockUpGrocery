@@ -59,7 +59,8 @@ class postRidesViewController: UIViewController, CLLocationManagerDelegate,  UIP
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
+        nameLabel.hidden = true
+        addressLabel.hidden = true
         pricePickerView.delegate = self
         seatPickerView.delegate = self
         
@@ -105,7 +106,7 @@ class postRidesViewController: UIViewController, CLLocationManagerDelegate,  UIP
         let datePicker : UIDatePicker = UIDatePicker()
         datePicker.datePickerMode = UIDatePickerMode.Time
         sender.inputView = datePicker
-         datePicker.addTarget(self, action: #selector(postRidesViewController.datePicker(_:)), forControlEvents: UIControlEvents.ValueChanged)
+        datePicker.addTarget(self, action: Selector("datePicker:"), forControlEvents: UIControlEvents.ValueChanged)
         
     }
     func datePicker(sender: UIDatePicker) {
@@ -164,6 +165,9 @@ class postRidesViewController: UIViewController, CLLocationManagerDelegate,  UIP
                 self.destination = place
                 self.nameLabel.text = place.name
                 self.addressLabel.text = place.formattedAddress!.componentsSeparatedByString(", ").joinWithSeparator("\n")
+                
+                self.nameLabel.hidden = false
+                self.addressLabel.hidden = false
             } else {
                 self.nameLabel.text = "No place selected"
                 self.addressLabel.text = ""

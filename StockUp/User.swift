@@ -56,6 +56,8 @@ struct User {
         let postViewController = poststoryboard.instantiateViewControllerWithIdentifier("postViewController") as! UINavigationController
         postViewController.tabBarItem.title = "Post a Ride"
         
+        
+        
         switch (user) {
         case userType.inActive :
             let inactiveViewController = storyboard.instantiateViewControllerWithIdentifier("inactiveViewController") as! UINavigationController
