@@ -118,8 +118,8 @@ class searchRidesViewController: UIViewController, UITableViewDelegate, UITableV
         let ride = rides![indexPath.row]
         cell.destinationLabel.text = ride.destination
         cell.destAddressLabel.text = ride.destAddress
-        cell.driverNameLabel.text = ride.driver
-        cell.seatsLabel.text = String(ride.seats)
+        //cell.driverNameLabel.text = ride.driver
+        //cell.seatsLabel.text = String(ride.seats)
         cell.timeLabel.text = String(ride.time)
         cell.priceLabel.text = String(ride.price)
         
