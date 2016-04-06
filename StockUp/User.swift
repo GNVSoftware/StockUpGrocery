@@ -53,8 +53,10 @@ struct User {
         
         let searchViewController = searchstoryboard.instantiateViewControllerWithIdentifier("searchViewController") as! UINavigationController
         searchViewController.tabBarItem.title = "Search Rides"
+        searchViewController.tabBarItem.image = UIImage(named: "Search")
         let postViewController = poststoryboard.instantiateViewControllerWithIdentifier("postViewController") as! UINavigationController
         postViewController.tabBarItem.title = "Post a Ride"
+        postViewController.tabBarItem.image = UIImage(named: "Compose")
         
         
         

@@ -32,6 +32,12 @@ class ActiveRiderViewController: UIViewController {
         }
     }
     
+    @IBAction func onCall(sender: AnyObject) {
+        if let url = NSURL(string: "tel://\(phoneLabel.text!)") {
+            UIApplication.sharedApplication().openURL(url)
+        }
+    
+    }
     
     @IBAction func onCancel(sender: AnyObject) {
         // Make the User Inactive

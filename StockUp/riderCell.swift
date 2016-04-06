@@ -16,6 +16,13 @@ class riderCell: UITableViewCell {
     
     @IBOutlet weak var riderPhoneLabel: UILabel!
 
+    @IBAction func onCall(sender: AnyObject) {
+    
+        if let url = NSURL(string: "tel://\(riderPhoneLabel.text!)") {
+            UIApplication.sharedApplication().openURL(url)
+        }
+    
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
