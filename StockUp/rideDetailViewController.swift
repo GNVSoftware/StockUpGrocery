@@ -130,6 +130,8 @@ class rideDetailViewController: UIViewController {
         driverName.text = ride.driver
         loadFirstPhotoForPlace(destPlaceID)
         cosmoView.rating = Double(ride.destinationRating)
+        cosmoView.settings.updateOnTouch = false
+        
     }
 
     override func didReceiveMemoryWarning() {
