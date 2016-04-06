@@ -27,7 +27,7 @@ class Post: NSObject {
 //        
 //        newRide["currentLatitude"] = currentLatitude
 //        newRide["currentLongitude"] = currentLongitude
-        
+        newRide["placeRating"] = destination.rating
         newRide["departureTime"] = milTimeDate
         newRide["destinationName"] = destination.name
         newRide["driverID"] = PFUser.currentUser()?.objectId

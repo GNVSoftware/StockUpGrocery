@@ -8,5 +8,6 @@ target 'StockUp' do
     pod 'GoogleMaps'
     pod 'ParseUI'
     pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
+    pod 'Cosmos', '~> 1.2'
 end
 

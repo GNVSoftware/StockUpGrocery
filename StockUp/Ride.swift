@@ -22,6 +22,8 @@ class Ride: NSObject {
     var seats : Int16
     var price : Int16
     var time : Int16
+    var destinationPlaceID : String
+    var destinationRating : Float
     
     init(ride : JSON){
         // code goes here
@@ -33,5 +35,7 @@ class Ride: NSObject {
         self.seats = ride["seatsAvailable"].int16Value
         self.price = ride["price"].int16Value
         self.time = ride["departuredTime"].int16Value
+        self.destinationPlaceID = ride["destinationPlaceID"].stringValue
+        self.destinationRating = ride["placeRating"].floatValue
     }
 }

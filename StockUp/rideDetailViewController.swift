@@ -8,11 +8,14 @@
 
 import UIKit
 import Parse
+import GoogleMaps
+import Cosmos
 
 class rideDetailViewController: UIViewController {
     
     var ride : Ride!
-    
+    var destPlaceID = ""
+    var rating = 0.00
     //Outlets
     @IBOutlet weak var imageView: UIImageView!
 
@@ -26,6 +29,7 @@ class rideDetailViewController: UIViewController {
     
     @IBOutlet weak var driverName: UILabel!
         
+    @IBOutlet weak var cosmoView: CosmosView!
     // Segue Controller
     
     //Actions
@@ -86,8 +90,37 @@ class rideDetailViewController: UIViewController {
     }
     
     
+    func loadFirstPhotoForPlace(placeID: String) {
+        GMSPlacesClient.sharedClient().lookUpPhotosForPlaceID(placeID) { (photos, error) -> Void in
+            if let error = error {
+                // TODO: handle the error.
+                print("Error: \(error.description)")
+            } else {
+                if let firstPhoto = photos?.results.first {
+                    self.loadImageForMetadata(firstPhoto)
+                }
+            }
+        }
+    }
+    
+    func loadImageForMetadata(photoMetadata: GMSPlacePhotoMetadata) {
+        GMSPlacesClient.sharedClient()
+            .loadPlacePhoto(photoMetadata, constrainedToSize: imageView.bounds.size,
+                scale: self.imageView.window!.screen.scale) { (photo, error) -> Void in
+                    if let error = error {
+                        // TODO: handle the error.
+                        print("Error: \(error.description)")
+                    } else {
+                        self.imageView.image = photo;
+                        //self.attributionTextView.attributedText = photoMetadata.attributions;
+                    }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        destPlaceID = ride.destinationPlaceID
+        
 
         // Do any additional setup after loading the view.
         destionation.text = ride.destination
@@ -95,6 +128,8 @@ class rideDetailViewController: UIViewController {
         time.text = String(ride.time)
         price.text = String(ride.price)
         driverName.text = ride.driver
+        loadFirstPhotoForPlace(destPlaceID)
+        cosmoView.rating = Double(ride.destinationRating)
     }
 
     override func didReceiveMemoryWarning() {

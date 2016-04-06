@@ -1,5 +1,6 @@
 PODS:
   - Bolts/Tasks (1.6.0)
+  - Cosmos (1.2.2)
   - GoogleMaps (1.12.3)
   - Parse (1.12.0):
     - Bolts/Tasks (~> 1.5)
@@ -9,6 +10,7 @@ PODS:
   - SwiftyJSON (2.3.2)
 
 DEPENDENCIES:
+  - Cosmos (~> 1.2)
   - GoogleMaps
   - Parse
   - ParseUI
@@ -25,6 +27,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Bolts: f52a250053bb517ca874523c3913776359ab3def
+  Cosmos: 87c49100c69d2cb2eebfa4eb8d1e801fe29ff774
   GoogleMaps: a4ac67918d0b5ba5f6b9893ac80487e357779e6c
   Parse: de2c52a9a1421b91ae7594ab8ce191afd184f19b
   ParseUI: af2eba584799da4a9fbdac0e178662d7438b502e

@@ -161,11 +161,17 @@
                                     <action selector="onRequest:" destination="W0r-Gt-buz" eventType="touchUpInside" id="fCo-jq-jpt"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" id="zWz-PO-HXe" customClass="CosmosView" customModule="Cosmos">
+                                <rect key="frame" x="175" y="334" width="125" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="Ob2-kS-LR4"/>
                     <connections>
+                        <outlet property="cosmoView" destination="zWz-PO-HXe" id="T4U-lu-Krl"/>
                         <outlet property="destAddress" destination="aZq-DD-OvZ" id="7NQ-8y-MJ7"/>
                         <outlet property="destionation" destination="z1e-1D-wQ4" id="w8f-sl-Iaz"/>
                         <outlet property="driverName" destination="pqg-Cr-6yr" id="hi2-ky-CeL"/>
