@@ -131,7 +131,7 @@ class rideDetailViewController: UIViewController {
         loadFirstPhotoForPlace(destPlaceID)
         cosmoView.rating = Double(ride.destinationRating)
         cosmoView.settings.updateOnTouch = false
-        
+        cosmoView.settings.fillMode = .Precise
     }
 
     override func didReceiveMemoryWarning() {
