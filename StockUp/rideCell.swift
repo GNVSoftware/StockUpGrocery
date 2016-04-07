@@ -22,11 +22,24 @@ class rideCell: UITableViewCell {
     
     @IBOutlet weak var priceLabel: UILabel!
     
+    @IBOutlet weak var cardView: UIView!
+    
+    
     
     // Actions
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        cardView.alpha = 1
+        cardView.layer.masksToBounds = false
+        cardView.layer.cornerRadius = 1
+        cardView.layer.shadowOffset = CGSizeMake(2,2)
+        cardView.layer.shadowRadius = 1
+        cardView.layer.shadowOpacity = 0.2
+        let path = UIBezierPath()
+        cardView.layer.shadowPath = path.CGPath
+        
+        self.backgroundColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1)
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

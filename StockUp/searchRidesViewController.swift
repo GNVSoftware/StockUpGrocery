@@ -96,6 +96,7 @@ class searchRidesViewController: UIViewController, UITableViewDelegate, UITableV
                         let ride = Ride(ride: ride)
                         rides.append(ride)
                     }
+                    print(rides.count)
                     self.rides = rides
                     self.tableView.reloadData()
                 }
@@ -116,6 +117,7 @@ class searchRidesViewController: UIViewController, UITableViewDelegate, UITableV
         let cell = tableView.dequeueReusableCellWithIdentifier("rideCell", forIndexPath: indexPath) as! rideCell
         
         let ride = rides![indexPath.row]
+        cell.selectionStyle = .None
         cell.destinationLabel.text = ride.destination
         cell.destAddressLabel.text = ride.destAddress
         //cell.driverNameLabel.text = ride.driver

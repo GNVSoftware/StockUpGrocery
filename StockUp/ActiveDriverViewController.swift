@@ -87,6 +87,7 @@ class ActiveDriverViewController: UIViewController, UITableViewDelegate, UITable
         let cell = tableView.dequeueReusableCellWithIdentifier("riderCell") as! riderCell
         
         let rider = riders![indexPath.row]
+        cell.selectionStyle = .None
         cell.riderNameLabel.text = rider["name"] as? String
         cell.riderPhoneLabel.text = rider["phone"] as? String
         return cell
