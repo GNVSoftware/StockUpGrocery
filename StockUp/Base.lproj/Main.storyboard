@@ -70,6 +70,7 @@
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="MaR-0A-tBJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="75" id="34d-49-88v"/>
                             <constraint firstItem="ml7-St-nmB" firstAttribute="top" secondItem="GWv-JC-zGW" secondAttribute="bottom" constant="136" id="3i9-Mh-j4f"/>
@@ -88,6 +89,9 @@
                             <constraint firstItem="Guv-zW-WVJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="245" id="yHc-M6-WW5"/>
                             <constraint firstAttribute="trailing" secondItem="fCM-08-tU8" secondAttribute="trailing" constant="83" id="yoQ-E5-Uua"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="caQ-Ed-o0H" appends="YES" id="gB5-3a-azH"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="passwordTextField" destination="MaR-0A-tBJ" id="vVM-r8-9je"/>
@@ -95,6 +99,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="caQ-Ed-o0H">
+                    <connections>
+                        <action selector="onTap:" destination="BYZ-38-t0r" id="cz9-xG-75f"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-527" y="-303"/>
         </scene>
@@ -329,6 +338,7 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="ibm-Dk-6W3" firstAttribute="leading" secondItem="wHE-nq-vNC" secondAttribute="leading" constant="19" id="04V-pj-q75"/>
                             <constraint firstItem="hnD-RC-ISq" firstAttribute="leading" secondItem="wHE-nq-vNC" secondAttribute="leading" constant="38" id="1JV-yn-UXj"/>
@@ -349,6 +359,9 @@
                             <constraint firstItem="XYG-V2-rIz" firstAttribute="top" secondItem="HUu-sU-Fhb" secondAttribute="bottom" constant="8" id="x2S-ML-0fi"/>
                             <constraint firstItem="fgj-Hr-A9B" firstAttribute="top" secondItem="hnD-RC-ISq" secondAttribute="bottom" constant="183" id="y50-PO-PV6"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="K9c-LI-ag5" appends="YES" id="gqP-dt-EvZ"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Sign Up" id="hAW-Jk-V2L"/>
                     <connections>
@@ -359,6 +372,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uUz-tY-YwH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="K9c-LI-ag5">
+                    <connections>
+                        <action selector="onTap:" destination="g2D-py-dKK" id="8s0-75-JzD"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="357" y="-303"/>
         </scene>
