@@ -97,6 +97,7 @@ class rideDetailViewController: UIViewController {
                 print("Error: \(error.description)")
             } else {
                 if let firstPhoto = photos?.results.first {
+                    print("reaches here")
                     self.loadImageForMetadata(firstPhoto)
                 }
             }
@@ -105,10 +106,14 @@ class rideDetailViewController: UIViewController {
     
     func loadImageForMetadata(photoMetadata: GMSPlacePhotoMetadata) {
         GMSPlacesClient.sharedClient()
-            .loadPlacePhoto(photoMetadata, constrainedToSize: imageView.bounds.size,
-                scale: self.imageView.window!.screen.scale) { (photo, error) -> Void in
+            .loadPlacePhoto(photoMetadata
+                , constrainedToSize: imageView.bounds.size,
+                scale: self.imageView.window!.screen.scale
+                )
+            { (photo, error) -> Void in
                     if let error = error {
                         // TODO: handle the error.
+                        print("error")
                         print("Error: \(error.description)")
                     } else {
                         self.imageView.image = photo;
@@ -126,7 +131,7 @@ class rideDetailViewController: UIViewController {
         destionation.text = ride.destination
         destAddress.text = ride.destAddress
         time.text = String(ride.time)
-        price.text = String(ride.price)
+        price.text = String(format: "$%.2f", ride.price)
         driverName.text = ride.driver
         loadFirstPhotoForPlace(destPlaceID)
         cosmoView.rating = Double(ride.destinationRating)

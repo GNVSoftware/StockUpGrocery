@@ -55,6 +55,13 @@ class postRidesViewController: UIViewController, CLLocationManagerDelegate,  UIP
         }
     }
     
+    func donePickerPrice(){
+        priceTextField.resignFirstResponder()
+    }
+    
+    func donePickerSeats(){
+        seatsTextField.resignFirstResponder()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,6 +79,43 @@ class postRidesViewController: UIViewController, CLLocationManagerDelegate,  UIP
         locationManager.distanceFilter = 200
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestAlwaysAuthorization()
+        
+        let toolBar = UIToolbar()
+        toolBar.barStyle = UIBarStyle.Default
+        toolBar.translucent = true
+        toolBar.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
+        toolBar.sizeToFit()
+        toolBar.backgroundColor = UIColor.whiteColor()
+        
+        let doneButtonPrice = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(postRidesViewController.donePickerPrice))
+
+        toolBar.setItems([doneButtonPrice], animated: false)
+        toolBar.userInteractionEnabled = true
+        priceTextField.inputAccessoryView = toolBar
+        
+        let toolBarS = UIToolbar()
+        toolBarS.barStyle = UIBarStyle.Default
+        toolBarS.translucent = true
+        toolBarS.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
+        toolBarS.sizeToFit()
+        toolBarS.backgroundColor = UIColor.whiteColor()
+        let doneButtonSeats = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(postRidesViewController.donePickerSeats))
+        
+        toolBarS.setItems([doneButtonSeats], animated: false)
+        toolBarS.userInteractionEnabled = true
+        seatsTextField.inputAccessoryView = toolBarS
+    
+        
+        pricePickerView.backgroundColor = UIColor.whiteColor()
+        seatPickerView.backgroundColor = UIColor.whiteColor()
+        
+        var datePicker : UIDatePicker = UIDatePicker()
+        datePicker.datePickerMode = UIDatePickerMode.Time
+        dateField.inputView = datePicker
+        datePicker.addTarget(self, action: Selector("datePicker:"), forControlEvents: UIControlEvents.ValueChanged)
+        datePicker.backgroundColor = UIColor.whiteColor()
+        
+        
         
         placesClient = GMSPlacesClient()
         
@@ -102,13 +146,6 @@ class postRidesViewController: UIViewController, CLLocationManagerDelegate,  UIP
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func dateField(sender: UITextField) {
-        let datePicker : UIDatePicker = UIDatePicker()
-        datePicker.datePickerMode = UIDatePickerMode.Time
-        sender.inputView = datePicker
-        datePicker.addTarget(self, action: Selector("datePicker:"), forControlEvents: UIControlEvents.ValueChanged)
-        
-    }
     func datePicker(sender: UIDatePicker) {
         let timeFormatter = NSDateFormatter()
         timeFormatter.dateStyle = .NoStyle
@@ -189,14 +226,17 @@ class postRidesViewController: UIViewController, CLLocationManagerDelegate,  UIP
             let dateFormatter = NSDateFormatter()
             dateFormatter.dateFormat = "h:mm a"
             let date = dateFormatter.dateFromString(dateAsString)
+            print(date)
             
             dateFormatter.dateFormat = "HH:mm"
             let milTimeDate = dateFormatter.stringFromDate(date!)
             
             let milTime = dateFormatter.dateFromString(milTimeDate)
+            print(milTime)
+            
+            postRide.postRide(destination!, currentLocation: currentLocation!, currentLatitude: currentLat, currentLongitude: currentLong, price: price, seatsAvailable: seatsAvail, milTimeDate: time)
             
             
-            postRide.postRide(destination!, currentLocation: currentLocation!, currentLatitude: currentLat, currentLongitude: currentLong, price: price, seatsAvailable: seatsAvail, milTimeDate: milTime!)
         }
     }
 

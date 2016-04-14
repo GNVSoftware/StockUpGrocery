@@ -40,6 +40,8 @@ class rideCell: UITableViewCell {
         cardView.layer.shadowPath = path.CGPath
         
         self.backgroundColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1)
+        
+        destAddressLabel.preferredMaxLayoutWidth = destAddressLabel.frame.size.width
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

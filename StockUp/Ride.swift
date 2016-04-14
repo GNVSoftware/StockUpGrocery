@@ -20,8 +20,8 @@ class Ride: NSObject {
     var driverId : String
     var driver : String
     var seats : Int16
-    var price : Int16
-    var time : Int16
+    var price : Double
+    var time : String
     var destinationPlaceID : String
     var destinationRating : Float
     
@@ -33,8 +33,8 @@ class Ride: NSObject {
         self.driverId = ride["driverID"]["_id"].stringValue
         self.driver = ride["driverID"]["name"].stringValue
         self.seats = ride["seatsAvailable"].int16Value
-        self.price = ride["price"].int16Value
-        self.time = ride["departuredTime"].int16Value
+        self.price = ride["doublePrice"].doubleValue
+        self.time = ride["dTime"].stringValue
         self.destinationPlaceID = ride["destinationPlaceID"].stringValue
         self.destinationRating = ride["placeRating"].floatValue
     }

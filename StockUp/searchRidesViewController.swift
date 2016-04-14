@@ -38,6 +38,8 @@ class searchRidesViewController: UIViewController, UITableViewDelegate, UITableV
         
         tableView.delegate = self
         tableView.dataSource = self
+//        tableView.estimatedRowHeight = 400
+        tableView.rowHeight = 140
         
         // Do any additional setup after loading the view.
         locationManager = CLLocationManager()
@@ -122,8 +124,8 @@ class searchRidesViewController: UIViewController, UITableViewDelegate, UITableV
         cell.destAddressLabel.text = ride.destAddress
         //cell.driverNameLabel.text = ride.driver
         //cell.seatsLabel.text = String(ride.seats)
-        cell.timeLabel.text = String(ride.time)
-        cell.priceLabel.text = String(ride.price)
+        cell.timeLabel.text = ride.time
+        cell.priceLabel.text = String(format: "$%.2f", ride.price)
         
         return cell
     }

@@ -13,7 +13,7 @@ import GoogleMaps
 class Post: NSObject {
     
     
-    func postRide(destination: GMSPlace, currentLocation: GMSPlace, currentLatitude: Double, currentLongitude: Double, price: Double, seatsAvailable: Int, milTimeDate: NSDate) {
+    func postRide(destination: GMSPlace, currentLocation: GMSPlace, currentLatitude: Double, currentLongitude: Double, price: Double, seatsAvailable: Int, milTimeDate: String) {
         let newRide = PFObject(className:"Post")
         
         newRide["doublePrice"] = price
@@ -28,7 +28,7 @@ class Post: NSObject {
 //        newRide["currentLatitude"] = currentLatitude
 //        newRide["currentLongitude"] = currentLongitude
         newRide["placeRating"] = destination.rating
-        newRide["departureTime"] = milTimeDate
+        newRide["dTime"] = milTimeDate
         newRide["destinationName"] = destination.name
         newRide["driverID"] = PFUser.currentUser()?.objectId
         newRide["destinationPlaceID"] = destination.placeID
